@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pick_Ingredients__c</fullName>
+    <externalId>false</externalId>
+    <label>Pick Ingredients</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Blueberrys</fullName>
+                <default>false</default>
+                <label>Blueberrys</label>
+            </value>
+            <value>
+                <fullName>Cookie Dough</fullName>
+                <default>false</default>
+                <label>Cookie Dough</label>
+            </value>
+            <value>
+                <fullName>Cream</fullName>
+                <default>false</default>
+                <label>Cream</label>
+            </value>
+            <value>
+                <fullName>Flavoring</fullName>
+                <default>false</default>
+                <label>Flavoring</label>
+            </value>
+            <value>
+                <fullName>Ice</fullName>
+                <default>false</default>
+                <label>Ice</label>
+            </value>
+            <value>
+                <fullName>Milk</fullName>
+                <default>false</default>
+                <label>Milk</label>
+            </value>
+            <value>
+                <fullName>Splenda</fullName>
+                <default>false</default>
+                <label>Splenda</label>
+            </value>
+            <value>
+                <fullName>Strawberries</fullName>
+                <default>false</default>
+                <label>Strawberries</label>
+            </value>
+            <value>
+                <fullName>Sugar</fullName>
+                <default>false</default>
+                <label>Sugar</label>
+            </value>
+            <value>
+                <fullName>Vanilla</fullName>
+                <default>false</default>
+                <label>Vanilla</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
