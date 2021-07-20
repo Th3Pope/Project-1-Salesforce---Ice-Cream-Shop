@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Dont_Sell_If_No_Ice_Cream</fullName>
-    <active>true</active>
-    <errorConditionFormula>VLOOKUP($ObjectType.Ice_Cream_Flavor__c.Fields.Quantity__c,   $ObjectType.Ice_Cream_Flavor__c.Fields.Name,  Ice_Cream_Flavor__r.Name) &lt;= 0</errorConditionFormula>
-    <errorDisplayField>Ice_Cream_Flavor__c</errorDisplayField>
-    <errorMessage>That flavor is empty, please inform management</errorMessage>
-</ValidationRule>
