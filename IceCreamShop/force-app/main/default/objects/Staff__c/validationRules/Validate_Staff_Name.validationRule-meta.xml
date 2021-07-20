@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Staff_Name</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISNEW(),NOT(ISBLANK(Name)),NOT(REGEX(Name,&quot;^[a-zA-Z]+ [a-zA-Z]+$&quot;)))</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Please check name input</errorMessage>
+</ValidationRule>
