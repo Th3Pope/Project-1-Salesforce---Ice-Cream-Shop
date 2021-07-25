@@ -1,0 +1,40 @@
+<apex:page standardController="Ingredient__c" extensions="ControllerAllergy">
+    <apex:sectionHeader title="One of Your Opportunities" subtitle="Exciting !"/>
+    <!--apex:detail subject="{!opportunity.ownerId}" relatedList="false" title="false"/-->
+
+    <apex:form>
+        <apex:actionFunction name="CallController" action="{!flavorListClickHandlerApex}" reRender="rerend">
+        
+            <!-- name is like an id. assignTo sets to field of controller-->
+            <apex:param name="textName" value="" assignTo="{!name}"/>
+            <apex:param name="indexRow" value="" assignTo="{!rowIndex}"/>
+        </apex:actionFunction>
+    </apex:form>
+
+    <apex:pageBlock >
+    	<apex:pageBlockTable value="{!flavorList}" var="fL" onRowClick="flavorListClickHandler(this)">
+        	<apex:column value="{!fL.name}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+    <!--Needed to push info back to server. This allows ControllerAllergy to be able to get the data -->
+    <apex:outputPanel id="rerend">
+        <apex:pageBlock>
+            <apex:outputText value="{!flavorIngredients.Ice_Cream_Flavor__r.Name}"/>
+            <apex:outputText value="{!flavorIngredients.Allergy__c}"/><!--FIELD NOT VISIBLE-->
+            <apex:outputText value="{!flavorIngredients.Pick_Ingredients__c}"/>
+        </apex:pageBlock>
+    </apex:outputPanel>
+
+    <script>
+    
+    function flavorListClickHandler(event)
+    {
+        var textName = event.textContent;
+        var indexRow = event.rowIndex;
+        CallController(textName, indexRow);
+        console.log("DONE");
+    }
+
+    </script>
+</apex:page>
