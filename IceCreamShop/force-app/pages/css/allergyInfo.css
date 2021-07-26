@@ -1,4 +1,58 @@
+.header{
+    background-color:#1A535C;
+    height: 6vh;  
+    display: flex;
+    align-items: center;
+}
+.headerText{
+    margin-left: 3vw;
+    color:#F7FFF7;
+    font-size: large;
+    border: 2px dotted #FFE66D;
+    border-radius: 50%;
+    padding: 8px;
+}
+body .bPageBlock { 
+    margin:0;
+}
+.apexp .bPageBlock.apexDefaultPageBlock .pbBody{
+    margin:0;
+    background-color:#F7FFF7;
+}
+body .bPageBlock .pbBody .labelCol, body .bPageBlock .pbBody .dataCol, body .bPageBlock .pbBody .data2Col, body .print .topics-label, body .print .topics-list{
+    padding:0;
+    padding-right: 20px;
+}
+.Custom51Tab .secondaryPalette, .individualPalette .Custom51Block .secondaryPalette{
+    border-color: #FFE66D;
+}
 .flavorSelector{
-    width: 100px;
-    border: 5px solid pink;
+    border: 2px solid #FFE66D !important;
+    background-color: #4ECDC4 !important;
+    width: 100%;
+    font-size: small;
+    cursor: pointer;
+}
+.apexp .detailList .list .headerRow th{
+    background-color: #1A535C;
+    color:#F7FFF7;
+    font-size: small;
+}
+.outputs{
+    border: 2px solid #FFE66D !important;
+    background-color:#4ECDC4 !important;
+    padding-bottom: 2vh !important;
+    margin-bottom: 2vh;
+    display:block !important; 
+    font-size: small;
+}
+ .pad{
+    padding-left: 1vw;
+    margin-top: 1.5vh;
+} 
+.flavorTitles{
+    font-size: medium;
+    display:block;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
