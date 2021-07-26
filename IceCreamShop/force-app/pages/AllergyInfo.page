@@ -1,7 +1,9 @@
-<apex:page standardController="Ingredient__c" extensions="ControllerAllergy">
+<apex:page standardController="Ingredient__c" extensions="ControllerAllergy" lightningStylesheets="true">
+    <apex:stylesheet value="{! $Resource.allergyInfoCSS}"/>
     <apex:sectionHeader title="I <3 Ice Cream!" subtitle="Allergy Information"/>
-    <!--apex:detail subject="{!opportunity.ownerId}" relatedList="false" title="false"/-->
-    <apex:iframe src="./html/sidebar.html" scrolling="true" id="theIframe"/>
+        
+    
+    <!-- Makes an invisible space-->
     <apex:form>
         <apex:actionFunction name="CallController" action="{!flavorListClickHandlerApex}" reRender="rerend">
         
@@ -11,11 +13,15 @@
         </apex:actionFunction>
     </apex:form>
 
-    <apex:pageBlock >
-    	<apex:pageBlockTable value="{!flavorList}" var="fL" onRowClick="flavorListClickHandler(this)">
+    <apex:iframe src="{! $Page.SideBar }" scrolling="true"/>
+
+    <apex:pageBlock>
+    	<apex:pageBlockTable value="{!flavorList}" var="fL" onRowClick="flavorListClickHandler(this)" >
         	<apex:column value="{!fL.name}" />
         </apex:pageBlockTable>
     </apex:pageBlock>
+
+
 
     <!--Needed to push info back to server. This allows ControllerAllergy to be able to get the data -->
     <apex:outputPanel id="rerend">
