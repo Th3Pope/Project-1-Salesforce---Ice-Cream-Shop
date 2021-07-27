@@ -1,0 +1,33 @@
+<apex:page>
+    <apex:stylesheet value="{! $Resource.homePageCSS}"/> 
+    <apex:stylesheet value="{! $Resource.headerCSS}"/> 
+
+    <div class="header">
+        <h1 class="headerText">I Heart Ice Cream</h1>         
+    </div>
+
+     <apex:pageBlock>
+        <apex:pageBlockSection columns="2"> 
+
+            <apex:pageBlockSectionItem dataStyle="width:10%">
+                <apex:iframe src="{! $Page.SideBar }" scrolling="true"/>
+            </apex:pageBlockSectionItem>
+
+           
+            <apex:pageBlockSectionItem>
+
+                <apex:outputPanel styleclass="imagesContainer">
+                    <div class="imageBox">
+                        <apex:image url="{! $Resource.earlyDaysJPG}" height="300" styleclass="image"/>
+                        <h1 class="text">Jim Heart, and his first Ice Cream truck. <br/> June 1969</h1>
+                    </div>
+                    <div class="imageBox">
+                        <apex:image  url="{! $Resource.employeeJPG}" height="425" styleclass="image"/>
+                        <h1 class="text">Peggy serving up a cone.<br/>Current day 2021</h1> 
+                    </div>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock> 
+
+</apex:page>

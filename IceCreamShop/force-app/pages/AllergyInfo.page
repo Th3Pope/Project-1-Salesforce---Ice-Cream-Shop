@@ -1,5 +1,6 @@
 <apex:page standardController="Ingredient__c" extensions="ControllerAllergy" >
     <apex:stylesheet value="{! $Resource.allergyInfoCSS}"/>
+    <apex:stylesheet value="{! $Resource.headerCSS}"/> 
 
     <div class="header">
         <h1 class="headerText">I Heart Ice Cream</h1>         
@@ -7,7 +8,7 @@
         
     <apex:pageBlock>
         <apex:pageBlockSection columns="3">   
-            <apex:pageBlockSectionItem dataStyle="width:15%">
+            <apex:pageBlockSectionItem dataStyle="width:13%">
                 <apex:iframe src="{! $Page.SideBar }" scrolling="true"/>
             </apex:pageBlockSectionItem>
             

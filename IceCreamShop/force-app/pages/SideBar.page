@@ -6,19 +6,19 @@
                 <!--h2 id="entity-header" class="slds-nav-vertical__title">Navigation</h2-->
                 <ul class="unorderedList">
                   <li class="liElement">
-                    <a href="#" class="">Home</a>
+                    <a target="_parent" href="{! URLFOR($Page.Home)}" class="">Home</a>
                   </li>
                   <li class="liElement">
-                    <a href="#" class="">Order</a>
+                    <a target="_parent" href="#" class="">Order</a>
                   </li>
                   <li class="liElement">
-                    <a href="#" class="">Best Scoops</a>
+                    <a target="_parent" href="#" class="">Best Scoops</a>
                   </li>
                   <li class="liElement">
-                    <a href="#" class="">Allergy Information</a>
+                    <a target="_parent" href="{!URLFOR($Page.AllergyInfo)}" class="">Allergy Information</a>
                   </li>
                   <li class="liElement">
-                    <a href="#" class="">Careers</a>
+                    <a target="_parent" href="#" class="">Careers</a>
                   </li>
                 </ul>
             </nav>

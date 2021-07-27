@@ -1,0 +1,17 @@
+.bPageBlock{
+    border-top: 4px solid #FFE66D !important; 
+}
+.header{
+    background-color:#1A535C;
+    height: 6vh;   
+    display: flex;
+    align-items: center;
+}
+.headerText{
+    margin-left: 3vw;
+    color:#F7FFF7;
+    font-size: large;
+    border: 2px dotted #FFE66D;
+    border-radius: 50%;
+    padding: 8px;
+}

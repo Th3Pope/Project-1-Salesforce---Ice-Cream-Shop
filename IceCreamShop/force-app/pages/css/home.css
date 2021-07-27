@@ -1,0 +1,30 @@
+.pbBody{
+    margin: 0 !important;
+}
+.bPageBlock .dataCol{
+    padding: 0 !important;
+}
+.welcome{
+    height:5vh;
+    width:100vw;
+    overflow:hidden;
+    background-color: blue;
+}
+.imagesContainer{
+    display:flex; 
+     /*flex-wrap: wrap;
+    padding: 5vw; */
+}
+.imageBox{
+    padding-left: 5vw;
+    padding-top: 5vw;
+    
+}
+.image{
+    border-radius: 50%;
+}
+.text{
+    display:block;
+    text-align: center;
+    padding: 10px;
+}

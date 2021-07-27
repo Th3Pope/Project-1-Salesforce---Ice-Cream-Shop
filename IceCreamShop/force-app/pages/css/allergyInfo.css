@@ -1,17 +1,3 @@
-.header{
-    background-color:#1A535C;
-    height: 6vh;  
-    display: flex;
-    align-items: center;
-}
-.headerText{
-    margin-left: 3vw;
-    color:#F7FFF7;
-    font-size: large;
-    border: 2px dotted #FFE66D;
-    border-radius: 50%;
-    padding: 8px;
-}
 body .bPageBlock { 
     margin:0;
 }
@@ -22,9 +8,6 @@ body .bPageBlock {
 body .bPageBlock .pbBody .labelCol, body .bPageBlock .pbBody .dataCol, body .bPageBlock .pbBody .data2Col, body .print .topics-label, body .print .topics-list{
     padding:0;
     padding-right: 20px;
-}
-.Custom51Tab .secondaryPalette, .individualPalette .Custom51Block .secondaryPalette{
-    border-color: #FFE66D;
 }
 .flavorSelector{
     border: 2px solid #FFE66D !important;
