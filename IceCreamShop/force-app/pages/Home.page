@@ -7,16 +7,20 @@
     </div>
 
      <apex:pageBlock>
-        <apex:pageBlockSection columns="2"> 
+    
+        <apex:pageBlockSection columns="3"> 
 
-            <apex:pageBlockSectionItem dataStyle="width:10%">
-                <apex:iframe src="{! $Page.SideBar }" scrolling="true"/>
+            <apex:pageBlockSectionItem dataStyle="width:15%">
+                <apex:iframe src="{! $Page.SideBar }"/>
             </apex:pageBlockSectionItem>
 
            
-            <apex:pageBlockSectionItem>
-
+            <apex:pageBlockSectionItem dataStyle="width:60%">
                 <apex:outputPanel styleclass="imagesContainer">
+                    <div class="overlay">
+                        <h1>I Heart Ice Cream</h1>
+                    </div>
+    
                     <div class="imageBox">
                         <apex:image url="{! $Resource.earlyDaysJPG}" height="300" styleclass="image"/>
                         <h1 class="text">Jim Heart, and his first Ice Cream truck. <br/> June 1969</h1>
@@ -27,7 +31,15 @@
                     </div>
                 </apex:outputPanel>
             </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem dataStyle="width:25%">
+                <div></div>
+            </apex:pageBlockSectionItem>
         </apex:pageBlockSection>
     </apex:pageBlock> 
+    <apex:pageBlock>
+        <div class="bottomBar">
+            <h3 class="cpyright">2021 &copy;</h3>
+        </div>
+    </apex:pageBlock>
 
 </apex:page>

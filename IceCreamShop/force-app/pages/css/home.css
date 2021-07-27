@@ -1,6 +1,9 @@
 .pbBody{
     margin: 0 !important;
 }
+body .bPageBlock{
+    margin:0;
+}
 .bPageBlock .dataCol{
     padding: 0 !important;
 }
@@ -12,19 +15,38 @@
 }
 .imagesContainer{
     display:flex; 
-     /*flex-wrap: wrap;
-    padding: 5vw; */
 }
 .imageBox{
     padding-left: 5vw;
-    padding-top: 5vw;
-    
+    padding-top: 5vw;    
 }
 .image{
     border-radius: 50%;
+    filter: grayscale(100%);
+    
 }
 .text{
     display:block;
     text-align: center;
     padding: 10px;
+}
+.bottomBar{
+    height:29vh;
+    width: 100%;
+    background-color:#1A535C; 
+    overflow: hidden !important;
+}
+.cpyright{
+    display:block;
+    text-align: center;
+}
+.overlay{
+    position:absolute;
+    font-style: italic;
+    font-size: 8vh;
+    top:10%;
+    left:25%;
+    color: #FF6B6B;
+    -webkit-text-stroke: 1px black;
+    z-index: 100;
 }

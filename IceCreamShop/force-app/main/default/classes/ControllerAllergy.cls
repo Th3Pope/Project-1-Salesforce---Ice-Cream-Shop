@@ -19,19 +19,14 @@ public class ControllerAllergy
     }
 
     public String name {get; set;}
-    public Integer rowIndex {get; set;}
     public Ingredient__c flavorIngredients {get; set;}
 
     //default constructor needed to extend standard controller. 
     public ControllerAllergy(ApexPages.StandardController controller){}
 
-    public void flavorListClickHandlerApex(){
-        //String name = ApexPages.currentPage().getParameters().get('textName');
-
-        System.debug(name+ '   '  +rowIndex);
-
+    public void flavorListClickHandlerApex()
+    {
         this.flavorIngredients = [SELECT Ice_Cream_Flavor__r.Name, Name, Allergy__c, Pick_Ingredients__c 
                                   FROM Ingredient__c WHERE Ice_Cream_Flavor__r.Name LIKE :name LIMIT 1];
-        System.debug(flavorIngredients.name);
     }
 }

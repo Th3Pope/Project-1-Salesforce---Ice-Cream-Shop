@@ -8,11 +8,11 @@
         
     <apex:pageBlock>
         <apex:pageBlockSection columns="3">   
-            <apex:pageBlockSectionItem dataStyle="width:13%">
-                <apex:iframe src="{! $Page.SideBar }" scrolling="true"/>
+            <apex:pageBlockSectionItem dataStyle="width:15%">
+                <apex:iframe src="{! $Page.SideBar }"/>
             </apex:pageBlockSectionItem>
             
-            <apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem dataStyle="width:25%">
                 <apex:pageBlockSection columns="1">    
                     <h1 class="flavorTitles">Please Select a flavor:</h1>
                     <apex:pageBlockTable value="{!flavorList}" var="fL" onRowClick="flavorListClickHandler(this)" styleclass="flavorSelector">
@@ -21,7 +21,7 @@
                 </apex:pageBlockSection>
             </apex:pageBlockSectionItem>
 
-            <apex:pageBlockSectionItem >
+            <apex:pageBlockSectionItem dataStyle="width:60%">
                 <!--Needed to push info back to server. This allows ControllerAllergy to be able to get the data -->
             <apex:pageBlockSection columns="1" id="rerend" >
                 <h1 class="flavorTitles">Flavor Information:</h1>
@@ -52,13 +52,17 @@
             </apex:pageBlockSectionItem>
         </apex:pageBlockSection> 
     </apex:pageBlock>
+    <apex:pageBlock>
+        <div class="bottomBar">
+            <h3 class="cpyright">2021 &copy;</h3>
+        </div>
+    </apex:pageBlock>
 
     <!-- Calls Controller and allows for re-render-->
     <apex:form>
         <apex:actionFunction name="CallController" action="{!flavorListClickHandlerApex}" reRender="rerend">
             <!-- name is like an id. assignTo sets to field of controller-->
             <apex:param name="textName" value="" assignTo="{!name}"/>
-            <apex:param name="indexRow" value="" assignTo="{!rowIndex}"/>
         </apex:actionFunction>
     </apex:form>
 
@@ -66,8 +70,7 @@
         function flavorListClickHandler(event)
         {
             var textName = event.textContent;
-            var indexRow = event.rowIndex;
-            CallController(textName, indexRow);
+            CallController(textName);
         }
     </script>
 </apex:page>
