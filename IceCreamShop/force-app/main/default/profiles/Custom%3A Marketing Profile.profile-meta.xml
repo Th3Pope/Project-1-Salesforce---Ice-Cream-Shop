@@ -128,26 +128,6 @@
     <layoutAssignments>
         <layout>Ingredient__c-Ingredient Layout</layout>
     </layoutAssignments>
-    <loginHours>
-        <fridayEnd>1320</fridayEnd>
-        <fridayStart>480</fridayStart>
-        <mondayEnd>1320</mondayEnd>
-        <mondayStart>480</mondayStart>
-        <saturdayEnd>1320</saturdayEnd>
-        <saturdayStart>480</saturdayStart>
-        <sundayEnd>1320</sundayEnd>
-        <sundayStart>480</sundayStart>
-        <thursdayEnd>1320</thursdayEnd>
-        <thursdayStart>480</thursdayStart>
-        <tuesdayEnd>1320</tuesdayEnd>
-        <tuesdayStart>480</tuesdayStart>
-        <wednesdayEnd>1320</wednesdayEnd>
-        <wednesdayStart>480</wednesdayStart>
-    </loginHours>
-    <loginIpRanges>
-        <endAddress>154.21.20.166</endAddress>
-        <startAddress>104.245.131.233</startAddress>
-    </loginIpRanges>
     <pageAccesses>
         <apexPage>AllergyInfo</apexPage>
         <enabled>false</enabled>
@@ -166,11 +146,11 @@
     </pageAccesses>
     <tabVisibilities>
         <tab>Bill__c</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Custom_Home_Page</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Ice_Cream_Flavor__c</tab>
@@ -182,32 +162,24 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Inventory__c</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Sale__c</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Staff__c</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Vendor__c</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
         <name>ActivitiesAccess</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>AddDirectMessageMembers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>AllowUniversalSearch</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -227,14 +199,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ChatterEditOwnPost</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ChatterFileLink</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ChatterInternalUser</name>
     </userPermissions>
     <userPermissions>
@@ -244,10 +208,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ChatterOwnGroups</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ContentWorkspaces</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -295,10 +255,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EnableCommunityAppLauncher</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>EnableNotifications</name>
     </userPermissions>
     <userPermissions>
@@ -315,19 +271,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>LightningExperienceUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ListEmailSend</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>MassInlineEdit</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>RemoveDirectMessageMembers</name>
+        <name>ManageEncryptionKeys</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -360,6 +308,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>UseWebLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewEventLogFiles</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
