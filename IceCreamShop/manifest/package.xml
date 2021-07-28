@@ -25,7 +25,10 @@
     <name>EmailTemplate</name>
   </types>
     <types>
-    <members>*</members>
+    <members>CEO_Custom</members>
+    <members>General_Employee_Custom</members>
+    <members>Manager_Custom</members>
+    <members>Standard</members>
     <name>Profile</name>
   </types>
     <types>
