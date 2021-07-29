@@ -1,7 +1,6 @@
 <apex:page controller="FlavorPageController">
     
     <apex:stylesheet value="{! $Resource.headerCSS}"/>
-    <apex:stylesheet value="{! $Resource.allergyInfoCSS}"/>
     
     <div class="header">
         <h1 class="headerText">I Heart Ice Cream</h1>         
@@ -50,81 +49,79 @@
         float: left;
         }
     </style>
-    <apex:pageBlock >
-        <apex:pageBlockSection columns="2"> 
-            
-            <apex:pageBlockSectionItem dataStyle="width:15%">
-                <apex:iframe src="{! $Page.SideBar }" scrolling="true"/>
-            </apex:pageBlockSectionItem>
-            
-            
-            <apex:pageBlockSectionItem dataStyle="width:85%">
-                <apex:outputPanel >
-                    
-                    <br/>
-                    
-                    <div id="podiumContainer">
-                        <h2>Our Most Popular Flavors</h2>
-                        <br/>
-                        <br/>
-                        <div id="podium">
-                            <div>
-                                <div class="circle" style="background: {!flavorWrappers[0].flavor.Color__c}"></div>
-                                <div class="triangle-up"></div>
-                                {!flavorWrappers[0].flavor.Name}
-                                <br/>
-                                {!flavorWrappers[0].numberSold} scoops sold!
-                                <br/>
-                                ${!flavorWrappers[0].flavor.Sale_Price_Per_Scoop__c}/scoop
-                            </div>
-                            <div>
-                                <div class="circle" style="background: {!flavorWrappers[1].flavor.Color__c}"></div>
-                                <div class="triangle-up"></div>
-                                {!flavorWrappers[1].flavor.Name}
-                                <br/>
-                                {!flavorWrappers[1].numberSold} scoops sold!
-                                <br/>
-                                ${!flavorWrappers[1].flavor.Sale_Price_Per_Scoop__c}/scoop
-                            </div>
-                            <div>
-                                <div class="circle" style="background: {!flavorWrappers[2].flavor.Color__c}"></div>
-                                <div class="triangle-up"></div>
-                                {!flavorWrappers[2].flavor.Name}
-                                <br/>
-                                {!flavorWrappers[2].numberSold} scoops sold!
-                                <br/>
-                                ${!flavorWrappers[2].flavor.Sale_Price_Per_Scoop__c}/scoop
-                            </div>
-                        </div>
+    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="2"> 
+                
+                <apex:pageBlockSectionItem dataStyle="width:10%">
+                    <apex:iframe src="{! $Page.SideBar }" scrolling="true"/>
+                </apex:pageBlockSectionItem>
+                
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel >
                         
                         <br/>
-                        <br/>
-                        <div style='padding:20px'>
-                            <h2>All Flavors</h2>
+                        
+                        <div id="podiumContainer">
+                            <h2>Our Most Popular Flavors</h2>
                             <br/>
                             <br/>
+                            <div id="podium">
+                                <div>
+                                    <div class="circle" style="background: {!flavorWrappers[0].flavor.Color__c}"></div>
+                                    <div class="triangle-up"></div>
+                                    {!flavorWrappers[0].flavor.Name}
+                                    <br/>
+                                    {!flavorWrappers[0].numberSold} scoops sold!
+                                    <br/>
+                                    ${!flavorWrappers[0].flavor.Sale_Price_Per_Scoop__c}/scoop
+                                </div>
+                                <div>
+                                    <div class="circle" style="background: {!flavorWrappers[1].flavor.Color__c}"></div>
+                                    <div class="triangle-up"></div>
+                                    {!flavorWrappers[1].flavor.Name}
+                                    <br/>
+                                    {!flavorWrappers[1].numberSold} scoops sold!
+                                    <br/>
+                                    ${!flavorWrappers[1].flavor.Sale_Price_Per_Scoop__c}/scoop
+                                </div>
+                                <div>
+                                    <div class="circle" style="background: {!flavorWrappers[2].flavor.Color__c}"></div>
+                                    <div class="triangle-up"></div>
+                                    {!flavorWrappers[2].flavor.Name}
+                                    <br/>
+                                    {!flavorWrappers[2].numberSold} scoops sold!
+                                    <br/>
+                                    ${!flavorWrappers[2].flavor.Sale_Price_Per_Scoop__c}/scoop
+                                </div>
+                            </div>
                             
-                            <table style="width:400px">
-                                <col style="width: 30px;" />
-                                <apex:repeat value="{!allFlavors}" var="flavor">
-                                    <tr>
-                                        
-                                        <td style='text-align:right'><div class="allFlavorsCircle" style="background: {!flavor.Color__c}"></div>
+                            <br/>
+                            <br/>
+                            <div style='padding:20px'>
+                                <h2>All Flavors</h2>
+                                <br/>
+                                <br/>
+                                
+                                <table style="width:400px">
+                                    <col style="width: 30px;" />
+                                    <apex:repeat value="{!allFlavors}" var="flavor">
+                                        <tr>
                                             
-                                        </td>
-                                        <td style='text-align:left; vertical-align:middle'>{!flavor.name} at ${!flavor.Sale_Price_Per_Scoop__c}/scoop</td>
-                                    </tr>
-                                </apex:repeat>
-                            </table>
+                                            <td style='text-align:right'><div class="allFlavorsCircle" style="background: {!flavor.Color__c}"></div>
+                                                
+                                            </td>
+                                            <td style='text-align:left; vertical-align:middle'>{!flavor.name} at ${!flavor.Sale_Price_Per_Scoop__c}/scoop</td>
+                                        </tr>
+                                    </apex:repeat>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                </apex:outputPanel>
-            </apex:pageBlockSectionItem>
-        </apex:pageBlockSection>
-    </apex:pageBlock>
-    <apex:pageBlock >
-        <div class="bottomBar">
-            <h3 class="cpyright">2021 &copy;</h3>
-        </div>
-    </apex:pageBlock>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
 </apex:page>

@@ -3,5 +3,6 @@
     <apiVersion>52.0</apiVersion>
     <availableInTouch>false</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <label>FlavorPage</label>
+    <description>Default Lightning Platform Under Construction page</description>
+    <label>UnderConstruction</label>
 </ApexPage>

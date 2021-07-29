@@ -76,4 +76,8 @@
         <name>Admin_Records_App</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>tempIceCustomer</name>
+        <type>Network</type>
+    </appMenuItems>
 </AppMenu>
