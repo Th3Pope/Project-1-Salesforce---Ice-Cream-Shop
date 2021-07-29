@@ -1,13 +1,37 @@
 <apex:page Controller="SubmitHome" >
-    <br/>
-    <br/>
-    <h1>
-        Your form is submitted!
-    </h1>
-    <br/>
-    <apex:form >
-    <apex:commandButton value="Return Home" action="{!returnHome}" />
-    </apex:form>
+    <apex:stylesheet value="{! $Resource.homePageCSS}"/>
+    <apex:stylesheet value="{! $Resource.headerCSS}"/>
+
+    <div class="header">
+        <h1 class="headerText">I Heart Ice Cream</h1>         
+    </div>
     
+     <apex:pageBlock >
     
+        <apex:pageBlockSection columns="3"> 
+
+            <apex:pageBlockSectionItem dataStyle="width:15%">
+                <apex:iframe src="{! $Page.SideBar }"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem dataStyle="width:60%">
+                <apex:form >
+            <br/>
+                <br/>
+                <h1>
+                    Your form is submitted!
+                </h1>
+                <br/>
+                
+                    <apex:commandButton value="Return Home" action="{!returnHome}" />
+                </apex:form>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem dataStyle="width:25%">
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>  
+    <apex:pageBlock >
+        <div class="bottomBar">
+            <h3 class="cpyright">2021 &copy;</h3>
+        </div>
+    </apex:pageBlock>
 </apex:page>

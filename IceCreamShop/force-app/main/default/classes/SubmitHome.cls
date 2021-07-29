@@ -4,7 +4,7 @@ public class SubmitHome extends JobController{
     public SubmitHome(){}
     
     public PageReference returnHome(){
-        return Page.JobListingMainPage;
+        return Page.Home;
     }
 
 }
