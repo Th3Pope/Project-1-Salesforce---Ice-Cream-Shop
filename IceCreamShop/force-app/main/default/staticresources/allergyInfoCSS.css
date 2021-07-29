@@ -48,3 +48,6 @@ body .bPageBlock .pbBody .labelCol, body .bPageBlock .pbBody .dataCol, body .bPa
     display:block;
     text-align: center;
 }
+.placeHolder{
+    height: 600px;
+}

@@ -11,7 +11,8 @@
     	<apex:pageBlock id="orderBuilderBlock">
         	<apex:pageBlockSection columns="3"> 
     			<apex:pageBlockSectionItem dataStyle="width:15%">
-        			<apex:iframe src="{! $Page.SideBar }" scrolling="true"/>
+					<div class="placeHolder"></div>
+        			<!-- <apex:iframe src="{! $Page.SideBar }" scrolling="true"/> -->
         		</apex:pageBlockSectionItem>
 	
                 

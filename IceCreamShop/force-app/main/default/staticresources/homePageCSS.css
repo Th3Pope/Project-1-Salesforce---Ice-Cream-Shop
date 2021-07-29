@@ -50,3 +50,6 @@ body .bPageBlock{
     -webkit-text-stroke: 1px black;
     z-index: 100;
 }
+.placeHolder{
+    height: 600px;
+}

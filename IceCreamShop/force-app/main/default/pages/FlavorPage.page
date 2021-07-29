@@ -55,7 +55,8 @@
             <apex:pageBlockSection columns="2"> 
                 
                 <apex:pageBlockSectionItem dataStyle="width:10%">
-                    <apex:iframe src="{! $Page.SideBar }" scrolling="true"/>
+                    <div class="placeHolder"></div>
+                    <!-- <apex:iframe src="{! $Page.SideBar }" scrolling="true"/> -->
                 </apex:pageBlockSectionItem>
                 
                 

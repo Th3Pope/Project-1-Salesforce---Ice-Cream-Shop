@@ -11,7 +11,8 @@
         <apex:pageBlockSection columns="3"> 
 
             <apex:pageBlockSectionItem dataStyle="width:15%">
-                <apex:iframe src="{! $Page.SideBar }"/>
+                <div class="placeHolder"></div>
+                <!-- <apex:iframe src="{! $Page.SideBar }"/> -->
             </apex:pageBlockSectionItem>
 
            
