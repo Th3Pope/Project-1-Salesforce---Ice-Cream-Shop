@@ -1,0 +1,187 @@
+<apex:page controller="ApplicationController">
+    <apex:stylesheet value="{! $Resource.homePageCSS}"/>
+    <apex:stylesheet value="{! $Resource.headerCSS}"/>
+
+    <div class="header">
+        <h1 class="headerText">I Heart Ice Cream</h1>         
+    </div>
+
+    <apex:pageBlock >
+    
+        <apex:pageBlockSection columns="3"> 
+
+            <apex:pageBlockSectionItem dataStyle="width:15%">
+                <apex:iframe src="{! $Page.SideBar }"/>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem dataStyle="width:42.5%">
+                <apex:form >
+                    <apex:pageBlock >
+                            
+                            <h1>
+                                Name
+                            </h1>
+                            <br/>
+                            <br/>
+                        <!-- <apex:outputText value="{!jobId}">hi</apex:outputText> -->
+                            <apex:outputLabel for="ApplicantFirstName" value="First Name " />
+                            <br/>
+                            <apex:inputText value="{!jobApp.First_Name__c}" id="ApplicantFirstName" /> 
+                            <br/> 
+                            
+                            <apex:outputLabel for="ApplicantLastName" value="Last Name " />
+                            <br/>
+                            <apex:inputText value="{!jobApp.Last_Name__c}" id="ApplicantLastName" /> 
+                            <br/> 
+                    </apex:pageBlock>
+                    
+                    <apex:pageBlock >
+                            <h1>
+                                Address
+                            </h1>
+                            <br/>
+                            <br/>
+                            
+                            <apex:outputLabel for="ApplicantAddress" value="Address " />
+                            <br/>
+                        
+                            <apex:inputText value="{!jobApp.Address__c}" id="ApplicantAddress" /> 
+                            <br/> 
+                            
+                            <apex:outputLabel for="ApplicantAddress2" value="Address Line 2 " />
+                            <br/>
+                            <apex:inputText value="{!jobApp.Address_Line_2__c}" id="ApplicantAddress2" /> 
+                            <br/> 
+                                                                                                                
+                        <apex:outputLabel for="ApplicantCity" value="City " />
+                            <br/>
+                        
+                            <apex:inputText value="{!jobApp.City__c}" id="ApplicantCity" /> 
+                            <br/>
+                            <br/> 
+                            
+                        <!--  <apex:outputLabel for="ApplicantState" value="State " />
+                            <br/>
+                            <apex:inputField value="{!jobApp.State__c}" id="ApplicantState" /> 
+                            <br/> -->
+                                                                                                              
+                        <!-- <apex:inputField value="{!jobApp.State__c}" label="State2"/>-->
+                            <apex:selectList value="{!jobApp.State__c}" label="State" size="1" >
+                                <apex:selectOptions value="{!State}"/>
+                            </apex:selectList>
+                            <br/>
+                                                       
+                        <apex:outputLabel for="ApplicantZipCode" value="Zip Code " />
+                            <br/>
+                            <apex:inputText value="{!jobApp.Zip_Code__c}" id="ApplicantZipCode" /> 
+                            <br/>
+                                                       
+                          
+                    </apex:pageBlock>
+                </apex:form>
+            </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                <apex:form>
+                    <apex:pageBlock >
+                        <h1>
+                            Contact Info
+                        </h1>
+                        <br/>
+                        <br/>
+                        
+                        
+                        <apex:outputLabel for="ApplicantPhone" value="Phone Number " />
+                        <br/>
+                        <apex:inputText value="{!jobApp.Phone_Number__c}" id="ApplicantPhone" /> 
+                        <br/>
+                        
+                        <apex:outputLabel for="ApplicantEmail" value="Email Address " />
+                        <br/>
+                        <apex:inputText value="{!jobApp.Email__c}" id="ApplicantEmail" /> 
+                        <br/>
+                        
+                        
+                    
+                        
+                        
+                    </apex:pageBlock>
+                    
+                    
+                    
+                    
+                    
+                <apex:pageBlock >
+                        
+                        <h1>
+                            Education
+                        </h1>
+                        <br/>
+                        <br/>
+                    
+                        <apex:outputLabel for="ApplicantEducationLevel" value="Please select your highest education attempted: " />
+                        <br/>
+                        <apex:inputField value="{!jobApp.Education_Level__c}" id="ApplicantEducationLevel" /> 
+                        <br/> 
+                        
+                        
+                        
+                        
+                        
+                        <apex:outputLabel for="ApplicantSchool" value="School (if applicable)" />
+                        <br/>
+                        <apex:inputText value="{!jobApp.School_Name__c}" id="ApplicantSchool" /> 
+                        <br/>
+                        
+                        
+                                    
+                        <apex:outputLabel for="ApplicantMajor" value="Major (if applicable) " />
+                        <br/>
+                        <apex:inputText value="{!jobApp.Major_if_applicable__c}" id="ApplicantMajor" /> 
+                        <br/>
+                        
+                        
+                        <apex:outputLabel for="ApplicantGraduationStatus" value="Have You Graduated from this school? " />
+                        <br/>
+                        <apex:inputField value="{!jobApp.Graduated__c}" id="ApplicantGraduationStatus" /> 
+                        <br/>
+                        
+                        <apex:outputLabel for="ApplicantGraduationDate" value="Graduation date (if applicable)" />
+                        <br/>
+                        <apex:inputField value="{!jobApp.Graduation_Date_if_applicable__c}" id="ApplicantGratuationDate" /> 
+                        <br/> 
+                </apex:pageBlock>
+                    
+                <apex:pageBlock >
+                        <h1>
+                            Language
+                        </h1>
+                        <br/>
+                        <br/>
+                    
+                    <apex:outputLabel for="Applicant2ndLanguage" value="Put all second languages you can speak here if applicable: " />
+                        <br/>
+                        <apex:inputText value="{!jobApp.Second_Language_if_applicable__c}" id="Applicant2ndLanguage" /> 
+                        <br/>
+                    
+                </apex:pageBlock>  
+                    
+                    <!-- <apex:outputPanel id="test">
+                        <apex:outputText value="{!jobApp.First_Name__c}" ></apex:outputText>
+                    </apex:outputPanel>
+                    
+                    
+                    <apex:commandButton value="test" reRender="test" /> -->
+                    <apex:commandButton value="Submit Application" action="{!submitApp}" />
+                    
+                    
+                </apex:form>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:pageBlock >
+        <div class="bottomBar">
+            <h3 class="cpyright">2021 &copy;</h3>
+        </div>
+    </apex:pageBlock>
+</apex:page>

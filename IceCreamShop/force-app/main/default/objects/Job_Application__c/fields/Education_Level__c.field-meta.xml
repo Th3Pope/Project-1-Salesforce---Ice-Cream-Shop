@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Education_Level__c</fullName>
+    <externalId>false</externalId>
+    <label>Education Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Less than High School or Equivalent</fullName>
+                <default>false</default>
+                <label>Less than High School or Equivalent</label>
+            </value>
+            <value>
+                <fullName>High School Diploma or GED</fullName>
+                <default>false</default>
+                <label>High School Diploma or GED</label>
+            </value>
+            <value>
+                <fullName>Some College</fullName>
+                <default>false</default>
+                <label>Some College</label>
+            </value>
+            <value>
+                <fullName>Associates Degree</fullName>
+                <default>false</default>
+                <label>Associates Degree</label>
+            </value>
+            <value>
+                <fullName>Bachelors Degree</fullName>
+                <default>false</default>
+                <label>Bachelors Degree</label>
+            </value>
+            <value>
+                <fullName>Master&apos;s Degree</fullName>
+                <default>false</default>
+                <label>Master&apos;s Degree</label>
+            </value>
+            <value>
+                <fullName>PhD</fullName>
+                <default>false</default>
+                <label>PhD</label>
+            </value>
+            <value>
+                <fullName>Trade School</fullName>
+                <default>false</default>
+                <label>Trade School</label>
+            </value>
+            <value>
+                <fullName>Medical School</fullName>
+                <default>false</default>
+                <label>Medical School</label>
+            </value>
+            <value>
+                <fullName>Law School</fullName>
+                <default>false</default>
+                <label>Law School</label>
+            </value>
+            <value>
+                <fullName>Other Post-Secondary education</fullName>
+                <default>false</default>
+                <label>Other Post-Secondary education</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,74 @@
+<apex:page controller="OrderBuilderController" docType="html-5.0">
+    <apex:stylesheet value="{! $Resource.allergyInfoCSS}"/>
+    <apex:stylesheet value="{! $Resource.Order_BuilderCSS}"/>
+    <apex:stylesheet value="{! $Resource.headerCSS}"/>
+    
+    	<div class="header">
+        	<h1 class="headerText">I Heart Ice Cream</h1>         
+    	</div>
+    
+    	<!-- Page block that retrieves and lists the flavors and novelties on the menu. -->
+    	<apex:pageBlock id="orderBuilderBlock">
+        	<apex:pageBlockSection columns="3"> 
+    			<apex:pageBlockSectionItem dataStyle="width:15%">
+        			<apex:iframe src="{! $Page.SideBar }" scrolling="true"/>
+        		</apex:pageBlockSectionItem>
+	
+                
+            	<apex:pageBlockSectionItem dataStyle="width:85%">
+                	<apex:pageBlockSection columns="1">
+                    	<apex:outputText value="Menu:" styleClass="textLabel"></apex:outputText>
+        				<!-- Table of flavors. -->
+    					<apex:pageBlockTable value="{!stockedFlavors}" var="flavor" headerClass="menuHeader" styleClass="flavorMenuBody">
+            				<apex:column value="{!flavor.name}" headerValue="Flavors"/>
+            				<apex:column value="{!flavor.Sale_Price_Per_Scoop__c}" headerValue="Price Per Scoop"/>
+        				</apex:pageBlockTable>
+        
+        				<!-- Table of novelties. -->
+        				<apex:pageBlockTable value="{!stockedNovelties}" var="novelty" headerClass="menuHeader" styleClass="noveltyMenuBody">
+            				<apex:column value="{!novelty.name}" headerValue="Bowls and Cones"/>
+        				</apex:pageBlockTable>
+        
+        				<apex:form id="orderForm" styleClass="orderForm">
+           				<br/>
+        				<apex:outputText value="Pick your flavor:" styleClass="textLabel"></apex:outputText>
+            			<apex:selectRadio id="FlavorSelector" value="{!selectedFlavorIndex}" styleClass="selectRadio">
+               				<apex:SelectOptions value="{!flavors}"/>
+               				<apex:actionSupport event="onchange" action="{!inputHandler}" rerender="orderBuilderBlock"/>
+            			</apex:selectRadio>
+            
+           				<apex:outputLabel value="Scoops: " for="scoopinput" styleClass="textLabel"/>
+           				<apex:input id="scoopInput" value="{!customerScoopCount}" type="number">
+           					<apex:actionSupport event="onchange" action="{!inputHandler}" rerender="orderBuilderBlock"/>
+           				</apex:input>
+           				<br/>
+           				<br/>
+	           			<br/>
+            
+            			<apex:outputText value="Pick your bowl or cone:" styleClass="textLabel"></apex:outputText>
+            			<apex:selectRadio value="{!selectedNoveltyIndex}" styleClass="selectRadio">
+        					<apex:SelectOptions value="{!novelties}"/>
+                			<apex:actionSupport event="onchange" action="{!inputHandler}" rerender="orderBuilderBlock"/>
+        				</apex:selectRadio>
+            			<br/>
+            
+            			<apex:outputText id="costdisplay" value="Cost (USD): {!orderPrice}" styleClass="textLabel"></apex:outputText>
+            			<br/>
+            			<br/>
+            			<apex:pageMessages id="ordermessages"></apex:pageMessages>
+            			<br/>
+            
+           				<div align="center">
+           					<apex:commandButton id="submissionbutton" action="{!saveOrderRecord}" value="Place Your Order" rerender="orderBuilderBlock" style="width:150px; height:20px"/> 
+           				</div>
+        			</apex:form>       
+                </apex:pageBlockSection> 
+        	</apex:pageBlockSectionItem>
+    	</apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:pageBlock >
+        <div class="bottomBar">
+            <h3 class="cpyright">2021 &copy;</h3>
+        </div>
+    </apex:pageBlock>
+</apex:page>

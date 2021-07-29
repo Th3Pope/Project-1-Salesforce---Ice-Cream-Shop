@@ -1,0 +1,71 @@
+<apex:page controller="ApplicationController">
+
+    <apex:stylesheet value="{! $Resource.homePageCSS}"/>
+    <apex:stylesheet value="{! $Resource.headerCSS}"/>
+
+    <div class="header">
+        <h1 class="headerText">I Heart Ice Cream</h1>         
+    </div>
+
+<apex:pageBlock >
+    
+    <apex:pageBlockSection columns="3"> 
+
+        <apex:pageBlockSectionItem dataStyle="width:15%" >
+            <apex:iframe src="{! $Page.SideBar }"/>
+        </apex:pageBlockSectionItem>
+
+
+        <apex:pageBlockSectionItem dataStyle="width:60%">
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!JobList}" var="JL" onRowClick="JobListClickHandler(this)">
+                    <apex:column value="{!JL.name}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:pageBlockSectionItem>
+
+        <apex:pageBlockSectionItem>
+            <apex:outputPanel id="rerend">
+                <apex:pageBlock >
+                    
+                    <apex:outputLabel value="Career Opportunity: {!jobName} ">
+                        <apex:outputText value="{!moreInfo}">
+                            <!--<apex:outputText value="{!jobId} " ></apex:outputText> -->
+                        </apex:outputText>
+                        <apex:form >
+                            <apex:commandButton value="Apply" action="{!application}"/>
+                        </apex:form>
+                    </apex:outputLabel> 
+                    <br/>
+                </apex:pageBlock>
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+
+<apex:pageBlock >
+    <div class="bottomBar">
+        <h3 class="cpyright">2021 &copy;</h3>
+    </div>
+</apex:pageBlock>
+
+<apex:form >
+    <apex:actionFunction name="CallController" action="{!JobListClickHandlerApex}" reRender="rerend">
+                   
+        <apex:param name="textName" value="" assignTo="{!name}"/>
+        <apex:param name="indexRow" value="" assignTo="{!rowIndex}"/>      
+    </apex:actionFunction>
+</apex:form>
+
+    <script>
+    
+    function JobListClickHandler(event)
+    {
+        var textName = event.textContent;
+        var indexRow = event.rowIndex;
+        CallController(textName, indexRow);
+        console.log("DONE");
+    }
+
+    </script>
+</apex:page>

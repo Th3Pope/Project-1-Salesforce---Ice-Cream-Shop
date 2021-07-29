@@ -72,4 +72,8 @@
         <name>standard__LightningService</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>Admin_Records_App</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

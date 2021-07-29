@@ -22,4 +22,4 @@ public class ControllerAllergyTest
         System.assertequals([SELECT Id, Name FROM Ice_Cream_Flavor__c ], control.flavorList); //else
         System.assertequals([SELECT Id, Name FROM Ice_Cream_Flavor__c ], control.flavorList); //if
     }
-}    
+}

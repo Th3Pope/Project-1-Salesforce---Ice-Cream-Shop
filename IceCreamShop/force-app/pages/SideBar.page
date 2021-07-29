@@ -9,16 +9,16 @@
                     <a target="_parent" href="{! URLFOR($Page.Home)}" class="">Home</a>
                   </li>
                   <li class="liElement">
-                    <a target="_parent" href="#" class="">Order</a>
+                    <a target="_parent" href="{!URLFOR($Page.Order_Builder)}" class="">Order</a>
                   </li>
                   <li class="liElement">
-                    <a target="_parent" href="#" class="">Best Scoops</a>
+                    <a target="_parent" href="{! URLFOR($Page.FlavorPage)}" class="">Flavors</a>
                   </li>
                   <li class="liElement">
                     <a target="_parent" href="{!URLFOR($Page.AllergyInfo)}" class="">Allergy Information</a>
                   </li>
                   <li class="liElement">
-                    <a target="_parent" href="#" class="">Careers</a>
+                    <a target="_parent" href="{!URLFOR($Page.JobListingMainPage)}" class="">Careers</a>
                   </li>
                 </ul>
             </nav>

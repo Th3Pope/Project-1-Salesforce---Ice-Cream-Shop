@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#8D5BCE</headerColor>
+        <logo>Graduation_Photo</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>This App simply provides easy access for Admins to view all records of Custom Objects for the org.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Admin Records App</label>
+    <navType>Standard</navType>
+    <tabs>Ice_Cream_Flavor__c</tabs>
+    <tabs>Ingredient__c</tabs>
+    <tabs>Inventory__c</tabs>
+    <tabs>Bill__c</tabs>
+    <tabs>Sale__c</tabs>
+    <tabs>Vendor__c</tabs>
+    <tabs>Staff__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Admin_Records_App_UtilityBar</utilityBar>
+</CustomApplication>

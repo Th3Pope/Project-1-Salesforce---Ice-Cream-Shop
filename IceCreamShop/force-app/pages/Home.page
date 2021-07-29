@@ -1,12 +1,12 @@
-<apex:page>
-    <apex:stylesheet value="{! $Resource.homePageCSS}"/> 
-    <apex:stylesheet value="{! $Resource.headerCSS}"/> 
+<apex:page >
+    <apex:stylesheet value="{! $Resource.homePageCSS}"/>
+    <apex:stylesheet value="{! $Resource.headerCSS}"/>
 
     <div class="header">
         <h1 class="headerText">I Heart Ice Cream</h1>         
     </div>
-
-     <apex:pageBlock>
+    
+     <apex:pageBlock >
     
         <apex:pageBlockSection columns="3"> 
 
@@ -26,7 +26,7 @@
                         <h1 class="text">Jim Heart, and his first Ice Cream truck. <br/> June 1969</h1>
                     </div>
                     <div class="imageBox">
-                        <apex:image  url="{! $Resource.employeeJPG}" height="425" styleclass="image"/>
+                        <apex:image url="{! $Resource.employeeJPG}" height="425" styleclass="image"/>
                         <h1 class="text">Peggy serving up a cone.<br/>Current day 2021</h1> 
                     </div>
                 </apex:outputPanel>
@@ -36,7 +36,7 @@
             </apex:pageBlockSectionItem>
         </apex:pageBlockSection>
     </apex:pageBlock> 
-    <apex:pageBlock>
+    <apex:pageBlock >
         <div class="bottomBar">
             <h3 class="cpyright">2021 &copy;</h3>
         </div>

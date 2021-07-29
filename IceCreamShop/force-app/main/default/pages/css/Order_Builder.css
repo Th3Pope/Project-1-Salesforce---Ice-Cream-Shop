@@ -1,0 +1,31 @@
+.textLabel {
+    color: #1A535C !important;
+    font-size: large;
+}
+
+.flavorMenuBody{
+    border: 2px solid #FFE66D !important;
+    background-color: #4ECDC4 !important;
+    width: 100%;
+    font-size: small;
+}
+
+.noveltyMenuBody{
+    border: 2px solid #FFE66D !important;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #4ECDC4 !important;
+    width: 100%;
+    font-size: small;
+}
+
+.menuHeader {
+    color: #F7FFF7 !important;
+    background-color: #1A535C !important;
+}
+
+.selectRadio {
+    border: 2px solid #1A535C !important;
+    border-radius: 8px;
+    background-color: #4ECDC4 !important;
+}
