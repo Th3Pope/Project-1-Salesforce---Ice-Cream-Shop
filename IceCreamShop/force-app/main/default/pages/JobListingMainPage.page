@@ -1,0 +1,46 @@
+<apex:page controller="ApplicationController">
+
+    <apex:form >
+        <apex:actionFunction name="CallController" action="{!JobListClickHandlerApex}" reRender="rerend">
+                   
+            <apex:param name="textName" value="" assignTo="{!name}"/>
+            <apex:param name="indexRow" value="" assignTo="{!rowIndex}"/>      
+        </apex:actionFunction>
+    </apex:form>
+
+    <apex:pageBlock >
+    	<apex:pageBlockTable value="{!JobList}" var="JL" onRowClick="JobListClickHandler(this)">
+        	<apex:column value="{!JL.name}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+	<apex:outputPanel id="rerend">
+        <apex:pageBlock >
+			
+            <apex:outputLabel value="Career Opportunity: {!jobName} ">
+                <apex:outputText value="{!moreInfo}">
+                     <!--<apex:outputText value="{!jobId} " ></apex:outputText> -->
+                 </apex:outputText>
+                <apex:form >
+					<apex:commandButton value="Apply" action="{!application}"/>
+                </apex:form>
+            </apex:outputLabel>
+            
+            <br/>
+
+
+        </apex:pageBlock>
+    </apex:outputPanel>
+
+    <script>
+    
+    function JobListClickHandler(event)
+    {
+        var textName = event.textContent;
+        var indexRow = event.rowIndex;
+        CallController(textName, indexRow);
+        console.log("DONE");
+    }
+
+    </script>
+</apex:page>

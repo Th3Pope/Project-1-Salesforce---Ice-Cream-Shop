@@ -1,0 +1,13 @@
+<apex:page Controller="SubmitHome" >
+    <br/>
+    <br/>
+    <h1>
+        Your form is submitted!
+    </h1>
+    <br/>
+    <apex:form >
+    <apex:commandButton value="Return Home" action="{!returnHome}" />
+    </apex:form>
+    
+    
+</apex:page>
