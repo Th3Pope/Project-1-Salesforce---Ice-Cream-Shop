@@ -65,6 +65,28 @@
 
                             <br/>
                             <br/>
+                            <!-- <apex:outputLabel for="Email" value="Email " />
+                            <br/>
+                        
+                            <input id="emailInput" type="email"/> 
+                            <br/> 
+
+                            <br/>
+                            <br/>
+                            <apex:outputLabel for="Phone" value="Phone " />
+                            <br/>
+                        
+                            <input id="phoneInput" /> 
+                            <br/> -->
+                         
+                    </apex:pageBlock>
+                
+            </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:pageBlock >
+                            <br/>
+                            <br/>
                             <apex:outputLabel for="Email" value="Email " />
                             <br/>
                         
@@ -78,13 +100,8 @@
                         
                             <input id="phoneInput" /> 
                             <br/>
-                         
-                    </apex:pageBlock>
-                
-            </apex:pageBlockSectionItem>
-
-                <apex:pageBlockSectionItem >
-                    <apex:pageBlock >
+                            <br/>
+                            <br/>
                         
                             <apex:commandButton value="Submit Application" onclick="getInfo(this)" />                                                                                  
                     </apex:pageBlock>  
@@ -122,6 +139,7 @@
             let phone = document.getElementById("phoneInput").value; 
 
             SendInfoToController(fname, lname, address, address2, city, email, zip, phone);
+            alert('Application Submitted');
         }
     </script>
 </apex:page>

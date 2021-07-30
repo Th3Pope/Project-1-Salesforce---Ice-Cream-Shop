@@ -76,7 +76,6 @@ public class ApplicationController  {
         jobApp.Email__c = email; 
         jobApp.Zip_Code__c = zip; 
         jobApp.Phone_Number__c = phone; 
-        insert jobApp; 
-     
+        insert jobApp;  
     }
 }
