@@ -53,3 +53,10 @@ body .bPageBlock{
 .placeHolder{
     height: 600px;
 }
+.cCenterPanel {
+    padding: 0px;
+    margin: 0px;
+}
+.contentRegion {
+    padding: 0 !important;
+}

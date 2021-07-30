@@ -1,7 +1,5 @@
 public class ApplicationController  {
     
-    
-    
     public static List <Job_Listing__c> JobList 
     {
         get 
@@ -22,82 +20,27 @@ public class ApplicationController  {
 
     public String name {get; set;}
     public static Integer rowIndex {get; set;}
-   // public Job_Listing__c moreIndex = JobList[rowIndex];
     public String moreInfo {get; set;}
 
-    
-    
-  
-    
     public string jobId{get;set;}
     public string jobName{get;set;}
+    public Job_Application__c jobApp { get; set; }
     
     public void JobListClickHandlerApex(){
         this.jobId = JobList[rowIndex -1].Id;
         this.jobName = JobList[rowIndex -1].Name;
         moreInfo = JobList[rowIndex -1].More_Info__c;
-        //jobId = JobList[rowIndex -1].Id;
-        //String name = ApexPages.currentPage().getParameters().get('textName');
-
-       // System.debug(name+ '   '  +rowIndex);
-
-       // this.moreInfo = [SELECT Name FROM Job_Listing__c Where Name =: name LIMIT 1];
-        //System.debug(flavorIngredients.name);
     }
-   /* public static String sendId(){
-        //jobId = JobList[rowIndex -1].Id;
-        return jobId;
-    }*/
-     
-    public PageReference application(){
-       	
+
+    public PageReference application(){    	
         return Page.JobApplication;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- //   public string appJobId {get;set;}
-  //  public virtual void changeId(string id){
-    //    jobId = id;
-    //}
-	public ApplicationController(){
-        this.jobApp = new Job_Application__c();
-      //  appJobId = sendId(); 
-        
-    }
-   // public ApplicationController(ApexPages.StandardController controller){}
-    
-    //public String test3{get;set;}
-    
 
-    
-    public List<SelectOption> State {get{
+	public ApplicationController(){
+        this.jobApp = new Job_Application__c();   
+    }
+   
+    public List<SelectOption> State { get{
         List<Schema.PicklistEntry> appState = Schema.SObjectType.Job_Application__c.Fields.State__c.getPicklistValues();
         State = new List<SelectOption>();
         for(Schema.PicklistEntry tempState: appState){
@@ -106,52 +49,34 @@ public class ApplicationController  {
         return State;
     } set;}
 
-    
-    
-    
-   // public String applicantFirstName {get;set;}
-    //public String applicantLastName {get;set;}
-    //public Integer i = 2;
-    
-  // public String applicantAddress{get;set;}
-  //  public String applicantAddress2{get;set;}
-   // Public String applicantCity{get;set;}
-//    Public String applicantZip{get;set;}
-    
-   // public String appFullName = applicantFirstName + applicantLastName;
-   
-  /*  public void testingMethod(){
-        System.debug('hi');
-        jobApp.First_Name__c = appFullName;
-        
-    }*/
-    
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    public Job_Application__c jobApp { get; set; }
-    
-
-    
-  
-    
-    
-    //   public Job_Application__c jobApp = new Job_Application__c();
-  //   jobApp.State__c = State;
-  //   jobApp.First_Name__c = applicantFirstName;
-    public PageReference submitApp(){
+    public PageReference submitApp()
+    {
         jobApp.Job_Listing__c = jobId;
         insert this.jobApp;
-
-        return Page.SubmitPage;
-        
+        return Page.SubmitPage;   
     }
-    
+    public String fname{get; set;}
+    public String lname{get; set;}
+    public String address{get; set;}
+    public String addressTwo{get; set;}
+    public String city{get; set;}
+    public String email{get; set;}
+    public String zip{get; set;}
+    public String phone{get; set;}
 
+    //call from js in jobapppage
+    public void submitApex(){
+   
+        jobApp.Job_Listing__c = jobId;
+        jobApp.First_Name__c = fname;
+        jobApp.Last_Name__c = lname;
+        jobApp.Address__c = address; 
+        jobApp.Address_Line_2__c = addressTwo;
+        jobApp.City__c = city; 
+        jobApp.Email__c = email; 
+        jobApp.Zip_Code__c = zip; 
+        jobApp.Phone_Number__c = phone; 
+        insert jobApp; 
+     
+    }
 }
