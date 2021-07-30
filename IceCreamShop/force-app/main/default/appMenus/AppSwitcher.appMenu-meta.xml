@@ -65,19 +65,15 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>standard__LightningSalesConsole</name>
+        <name>standard__LightningService</name>
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>standard__LightningService</name>
+        <name>standard__LightningSalesConsole</name>
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
         <name>Admin_Records_App</name>
         <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>tempIceCustomer</name>
-        <type>Network</type>
     </appMenuItems>
 </AppMenu>

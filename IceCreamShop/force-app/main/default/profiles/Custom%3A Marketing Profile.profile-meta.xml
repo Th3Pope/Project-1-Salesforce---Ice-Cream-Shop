@@ -437,10 +437,6 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>Header</apexPage>
-        <enabled>false</enabled>
-    </pageAccesses>
-    <pageAccesses>
         <apexPage>Home</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
