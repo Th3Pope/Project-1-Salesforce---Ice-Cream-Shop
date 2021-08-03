@@ -1,7 +1,21 @@
+<!--To Update the ICECREAMSHOP based on this manifest must nav to: \IceCreamShop\manifest THEN: sfdx force:source:retrieve -x package.xml-->
 <?xml version="1.0" encoding="UTF-8" ?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
   <types>
-    <members>*</members>
+    <members>ApplicationController</members>
+		<members>CaculateSalesPriceForTrigger</members>
+		<members>ControllerAllergy</members>
+		<members>ControllerAllergyTest</members>
+		<members>FlavorPageController</members>
+		<members>FlavorPageTestClass</members>
+		<members>JobController</members>
+		<members>OrderBuilderController</members>
+    <members>OrderBuilderTest</members>
+		<members>PopularFlavorWrapper</members>
+		<members>ScoopReducesQuantity</members>
+		<members>SubmitHome</members>
+		<members>TestClass</members>
+		<members>UpdateIceCreamFromInventory</members>
     <name>ApexClass</name>
   </types>
   <types>
@@ -9,14 +23,30 @@
     <name>ApexComponent</name>
   </types>
   <types>
-    <members>*</members>
+    <members>AllergyInfo</members>
+		<members>FlavorPage</members>
+		<members>Home</members>
+		<members>JobApplication</members>
+		<members>JobListingMainPage</members>
+		<members>Order_Builder</members>
+		<members>SideBar</members>
+		<members>SubmitPage</members>
+    <members>test1</members>
     <name>ApexPage</name>
   </types>
   <types>
     <members>*</members>
     <name>ApexTrigger</name>
+  </types>    
+  <types>
+    <members>*</members>
+    <name>AuraDefinitionBundle</name>
   </types>
-    <types>
+  <types>
+    <members>*</members>
+    <name>LightningComponentBundle</name>
+  </types>
+  <types>
     <members>*</members>
     <name>CustomTab</name>
   </types>
@@ -25,9 +55,10 @@
     <name>EmailTemplate</name>
   </types>
     <types>
-    <members>CEO_Custom</members>
-    <members>General_Employee_Custom</members>
-    <members>Manager_Custom</members>
+    <members>Admin</members>
+    <members>CEO Custom</members>
+    <members>General Employee Custom</members>
+    <members>Manager Custom</members>
     <members>Standard</members>
     <name>Profile</name>
   </types>
@@ -36,13 +67,9 @@
     <members>Manager</members>
     <name>Role</name>
   </types>
-    <types>
+  <types>
     <members>*</members>
     <name>WorkflowRule</name>
-  </types>
-  <types>
-  <members>Custom_Home_Page</members>
-  <name>flexiPage</name>
   </types>
     <version>52.0</version>
 </Package>

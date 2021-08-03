@@ -25,7 +25,7 @@
             </apex:pageBlock>
         </apex:pageBlockSectionItem>
 
-        <apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
             <apex:outputPanel id="rerend">
                 <apex:pageBlock >
                     

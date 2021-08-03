@@ -53,7 +53,7 @@
             </apex:pageBlockSectionItem>
         </apex:pageBlockSection> 
     </apex:pageBlock>
-    <apex:pageBlock>
+    <apex:pageBlock >
         <div class="bottomBar">
             <h3 class="cpyright">2021 &copy;</h3>
         </div>
