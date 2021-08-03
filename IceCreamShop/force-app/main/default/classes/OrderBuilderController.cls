@@ -36,8 +36,8 @@ public class OrderBuilderController {
         List<selectOption> novelties = new List<SelectOption>();
         Integer noveltyIndex = 0; 
         
-        // Add a standard bowl option.
-        novelties.add(new SelectOption(String.valueOf(-1), 'Bowl'));
+        // Add a standard novelty option.
+        novelties.add(new SelectOption(String.valueOf(-1), 'Carry-out cup'));
         
         for (Inventory__c novelty : stockedNovelties) {
             novelties.add(new SelectOption(String.valueOf(noveltyIndex), novelty.name));
@@ -94,6 +94,7 @@ public class OrderBuilderController {
             orderPrice = 0.00;
         }
         else {
+            // Prices are calculated using "flavor cost * scoop count".
             orderPrice = stockedFlavors[selectedFlavorIndex].Sale_Price_Per_Scoop__c * customerScoopCount;
         }
     }
