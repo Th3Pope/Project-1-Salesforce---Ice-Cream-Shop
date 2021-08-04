@@ -3,6 +3,8 @@
 #
 # STUPID APP SWITCHER
 **/AppSwitcher.appMenu
+**profiles
+**layouts
 package.xml
 
 # LWC configuration files
