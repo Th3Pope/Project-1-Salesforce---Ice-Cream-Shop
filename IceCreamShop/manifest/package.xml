@@ -16,6 +16,8 @@
 		<members>SubmitHome</members>
 		<members>TestClass</members>
 		<members>UpdateIceCreamFromInventory</members>
+    <members>SiteLoginController</members>
+    <members>LightningForgotPasswordController</members>
     <name>ApexClass</name>
   </types>
   <types>
