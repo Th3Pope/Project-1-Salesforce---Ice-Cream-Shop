@@ -1,3 +1,63 @@
-<aura:component >
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
 	
+    <!--Link + Dropdown-->
+    <aura:attribute name="status" type="String[]" default="Open, Closed, Closed Won, Any"/>
+    <ui:menu>
+        <ui:menuTriggerLink class="radioMenuLabel" aura:id="radioMenuLabel" label="Select a status"/>
+        <ui:menuList class="radioMenu" aura:id="radioMenu">
+            <aura:iteration items="{!v.status}" var="s">
+                <ui:radioMenuItem label="{!s}"/>
+            </aura:iteration>
+        </ui:menuList>
+    </ui:menu>
+
+    <!--Checkbox-->
+    <aura:attribute name="myBool" type="Boolean" default="true"/>
+    <ui:inputCheckbox aura:id="checkbox" label="Select?" change="{!c.onCheck}"/>
+    <p>Selected:</p>
+    <p><ui:outputText class="result" aura:id="checkResult" value="false" /></p>
+    <p>The following checkbox uses a component attribute to bind its value.</p>
+    <ui:outputCheckbox aura:id="output" value="{!v.myBool}"/>
+
+    <!--Check box group-->
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'Ross', 'value': 'option1'},
+    {'label': 'Rachel', 'value': 'option2'}
+    ]"/>
+    <aura:attribute name="value" type="List" default="option1"/>
+
+    <lightning:checkboxGroup name="Checkbox Group"
+                                label="Checkbox Group"
+                                options="{! v.options }"
+                                value="{! v.value }"
+                                onchange="{! c.handleChange }"/>
+
+
+    <!--Displays single record-->
+    <lightning:recordViewForm recordId="a01P000000Bn6YqIAJ" objectApiName="Ice_Cream_Flavor__c">
+        <div class="slds-box">
+            <lightning:outputField fieldName="Name" />
+            <lightning:outputField fieldName="Quantity__c" />
+        </div>
+    </lightning:recordViewForm>
+
+    <!-- Record table
+     <aura:attribute name="mydata" type="Object"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <lightning:datatable data="{! v.mydata }"
+        columns="{! v.mycolumns }"
+        keyField="id"
+        onrowselection="{! c.getSelectedName }"/>  -->
+
+    <!--Basic drop down-->
+    <lightning:select aura:id="select" name="select" label="Scoops:" onchange="{! c.onChange }">
+        <option value="">Select Scoop Quantity...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </lightning:select>
+
 </aura:component>

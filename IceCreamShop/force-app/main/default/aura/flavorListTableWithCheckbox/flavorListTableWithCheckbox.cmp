@@ -1,0 +1,22 @@
+<aura:component controller="OrderBuilderController" implements="forceCommunity:availableForAllPageTypes" access="global">
+   
+    <!--Record table w checkbox for icecream price and flavor-->
+    <aura:attribute name="recordData" type="Ice_Cream_Flavor__c[]"/>
+    <aura:attribute name="colLabels" type="List"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <lightning:datatable data="{! v.recordData }"
+        columns="{! v.colLabels }"
+        keyField="id"
+        onrowselection="{! c.getSelectedFlavor }"/> 
+
+    <!--Basic drop down-->
+    <lightning:select aura:id="select" name="select" label="Scoops:" onchange="{! c.onChange }">
+        <option value="">Select Scoop Quantity...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </lightning:select>
+
+</aura:component>

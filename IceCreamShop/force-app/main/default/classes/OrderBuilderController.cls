@@ -1,6 +1,7 @@
 public class OrderBuilderController {
     // Lists to hold available flavors and cone/bowl novelties.
-    public List<Ice_Cream_Flavor__c> stockedFlavors {get; set;}
+    @AuraEnabled
+    public static List<Ice_Cream_Flavor__c> stockedFlavors {get; set;}
     public List<Inventory__c> stockedNovelties {get; set;}
     
     // Properties that store customer choices/input.
@@ -12,13 +13,14 @@ public class OrderBuilderController {
     // True/false values that help keep track of an order's progress.
     private boolean inputProblems = true;
     
+
     public OrderBuilderController() {
         // The controller queries available menu items during construction.
         stockedFlavors = [SELECT Name, Sale_Price_Per_Scoop__c, Quantity__c FROM Ice_Cream_Flavor__c WHERE Quantity__c > 0  ORDER By Name];
         stockedNovelties = [SELECT Name, Quantity__c FROM Inventory__c WHERE Is_Ice_Cream__c = false AND Ice_Cream_Flavor__c = null AND Quantity__c > 0  ORDER By Name];
     }
 
-    // Helper that returns a list of selectable flavors for users to choose from.   
+    //Helper that returns a list of selectable flavors for users to choose from.   
     public List<SelectOption> getFlavors() {
         List<selectOption> flavors = new List<SelectOption>();
         Integer flavorIndex = 0; 
@@ -96,6 +98,24 @@ public class OrderBuilderController {
         else {
             // Prices are calculated using "flavor cost * scoop count".
             orderPrice = stockedFlavors[selectedFlavorIndex].Sale_Price_Per_Scoop__c * customerScoopCount;
+        }
+    }
+    // Helper that returns a list of flavors for users to choose from.
+    @AuraEnabled(cacheable=true)
+    public static List<Ice_Cream_Flavor__c> getFlavorsForAura()
+    {
+        try 
+        {
+            if(stockedFlavors == null)
+            {
+                stockedFlavors = [SELECT Name, Sale_Price_Per_Scoop__c, Quantity__c FROM Ice_Cream_Flavor__c WHERE Quantity__c > 0  ORDER By Name];
+            }
+
+            return stockedFlavors;
+            
+        } catch (Exception e) {
+            
+            throw new AuraHandledException(e.getMessage());
         }
     }
 }
