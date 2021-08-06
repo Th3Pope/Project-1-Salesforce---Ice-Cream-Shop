@@ -4,13 +4,15 @@
     <aura:attribute name="recordData" type="Ice_Cream_Flavor__c[]"/>
     <aura:attribute name="colLabels" type="List"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
-    <lightning:datatable data="{! v.recordData }"
+    <lightning:datatable aura:id="table"
+    data="{! v.recordData }"
         columns="{! v.colLabels }"
-        keyField="id"
+        keyField= "id"
         onrowselection="{! c.getSelectedFlavor }"/> 
 
     <!--Basic drop down-->
-    <lightning:select aura:id="select" name="select" label="Scoops:" onchange="{! c.onChange }">
+    <lightning:select aura:id="select" name="select" label="Scoops:" 
+                      onchange="{! c.selectedScoopNum }">
         <option value="">Select Scoop Quantity...</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -18,5 +20,10 @@
         <option value="4">4</option>
         <option value="5">5</option>
     </lightning:select>
+
+    
+    <!-- Success variant: Identifies a successful action -->
+    <lightning:button variant="success" label="Checkout" title="Successful action" onclick="{! c.buttonClickHandler}" class="slds-m-left_x-small"></lightning:button>
+
 
 </aura:component>

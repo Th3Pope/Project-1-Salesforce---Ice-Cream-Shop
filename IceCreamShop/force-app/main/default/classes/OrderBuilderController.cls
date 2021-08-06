@@ -5,7 +5,8 @@ public class OrderBuilderController {
     public List<Inventory__c> stockedNovelties {get; set;}
     
     // Properties that store customer choices/input.
-    public Integer selectedFlavorIndex {get; set;}
+    @AuraEnabled
+    public static Integer selectedFlavorIndex {get; set;}
     public Integer selectedNoveltyIndex {get; set;}
     public Integer customerScoopCount {get; set;}
     public Decimal orderPrice {get; set;}
@@ -108,7 +109,7 @@ public class OrderBuilderController {
         {
             if(stockedFlavors == null)
             {
-                stockedFlavors = [SELECT Name, Sale_Price_Per_Scoop__c, Quantity__c FROM Ice_Cream_Flavor__c WHERE Quantity__c > 0  ORDER By Name];
+                stockedFlavors = [SELECT Name, Flavor_Index__c, Sale_Price_Per_Scoop__c, Quantity__c FROM Ice_Cream_Flavor__c WHERE Quantity__c > 0  ORDER By Name];
             }
 
             return stockedFlavors;
