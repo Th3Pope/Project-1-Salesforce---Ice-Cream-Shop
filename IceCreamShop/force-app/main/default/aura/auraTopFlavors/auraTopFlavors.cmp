@@ -1,4 +1,8 @@
-<aura:component>
+<!-- This component levereges the functionality present in Theo's VisualForce Flavor Page controller. -->
+<aura:component controller="FlavorPageController">
+    <!-- Event handler that retrieves the necessary flavor data before the component is rendered. -->
+    <aura:handler name="initialization" value="{!this}" action="{!c.getFlavorData}"/>
+    
     <!-- Externally styled header bar and text for the component. -->
 	<div class="header">
     	<h1 class="headerText">I Heart Ice Cream </h1>         
@@ -12,5 +16,4 @@
         	</lightning:layoutItem>
         </aura:iteration>
   	</lightning:layout>
-    
 </aura:component>

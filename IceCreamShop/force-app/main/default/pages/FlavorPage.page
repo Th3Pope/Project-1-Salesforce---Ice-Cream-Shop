@@ -58,9 +58,7 @@
             
             <apex:pageBlockSectionItem dataStyle="width:85%">
                 <apex:outputPanel >
-                    
                     <br/>
-                    
                     <div id="podiumContainer">
                         <h2>Our Most Popular Flavors</h2>
                         
@@ -71,7 +69,6 @@
                             
                             <apex:repeat value="{!popFlavorWrappers}" var="wrapper">
                                 <div>
-                                    <!-- The background image technique below works. -->
                                     <div class="circle" style="background-image: url({!$Resource[wrapper.textureString]}); background-size: 100px"></div>
                                     <div class="triangle-up" style="background-image: url({!$Resource.Cone}); background-size: 150px"></div>
                                     <br/>
