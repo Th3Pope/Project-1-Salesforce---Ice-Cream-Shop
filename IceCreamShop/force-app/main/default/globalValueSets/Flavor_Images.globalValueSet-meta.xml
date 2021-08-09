@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Lemon</fullName>
+        <default>false</default>
+        <label>Lemon</label>
+    </customValue>
+    <customValue>
+        <fullName>Blueberry</fullName>
+        <default>false</default>
+        <label>Blueberry</label>
+    </customValue>
+    <customValue>
+        <fullName>Chocolate</fullName>
+        <default>false</default>
+        <label>Chocolate</label>
+    </customValue>
+    <customValue>
+        <fullName>Mint</fullName>
+        <default>false</default>
+        <label>Mint</label>
+    </customValue>
+    <customValue>
+        <fullName>Strawberry</fullName>
+        <default>false</default>
+        <label>Strawberry</label>
+    </customValue>
+    <customValue>
+        <fullName>Vanilla</fullName>
+        <default>true</default>
+        <label>Vanilla</label>
+    </customValue>
+    <description>A list of flavor image names that have corresponding ice cream image textures stored as static resources.</description>
+    <masterLabel>Flavor Images</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

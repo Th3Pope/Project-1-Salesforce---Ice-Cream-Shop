@@ -1,0 +1,16 @@
+<aura:component>
+    <!-- Externally styled header bar and text for the component. -->
+	<div class="header">
+    	<h1 class="headerText">I Heart Ice Cream </h1>         
+    </div>
+    
+    <!-- Layout for the top 3 flavor graphics -->
+    <lightning:layout>
+    	<aura:iteration items="1,2,3" var="flavor">
+        	<lightning:layoutItem padding="around-small">
+        		<div class="custom-box">"{!flavor}"</div>
+        	</lightning:layoutItem>
+        </aura:iteration>
+  	</lightning:layout>
+    
+</aura:component>

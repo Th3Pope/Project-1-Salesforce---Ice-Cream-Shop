@@ -1,0 +1,48 @@
+/* Internal stylings copied over from FlavorPage.vfp. */
+
+.THIS .circle {
+	width: 90px;
+    height: 90px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: gray;
+    margin: 0 auto; /* Centers horizontally */
+}
+        
+.THIS .triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid #E2B886;
+    margin: -30px auto; /* Centers horizontally */
+}
+
+.THIS #podium {
+    width: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.THIS #podiumContainer {
+    width: 400px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.THIS h2 {
+    font-size: 20px;
+}
+
+.THIS .allFlavorsCircle {
+    width: 25px;
+    height: 25px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: gray;
+    float: left;
+}
