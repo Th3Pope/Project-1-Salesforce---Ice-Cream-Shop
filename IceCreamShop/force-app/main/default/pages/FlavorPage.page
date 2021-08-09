@@ -14,15 +14,12 @@
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
-        background: gray;
         margin: 0 auto; <!-- Centers horizontally -->
         }
         .triangle-up {
-        width: 0;
-        height: 0;
-        border-left: 50px solid transparent;
-        border-right: 50px solid transparent;
-        border-top: 100px solid #E2B886;
+        width: 150px;
+    	height: 130px;
+    	clip-path: polygon(20% 0%, 80% 0%, 50% 100%);
         margin: -30px auto; <!-- Centers horizontally -->
         }
         #podium {
@@ -72,10 +69,13 @@
                         <br/>
                         <div id="podium">
                             
-                            <apex:repeat value="{!flavorWrappers}" var="wrapper">
+                            <apex:repeat value="{!popFlavorWrappers}" var="wrapper">
                                 <div>
-                                    <div class="circle" style="background: {!wrapper.colorString}"></div>
-                                    <div class="triangle-up"></div>
+                                    <!-- The background image technique below works. -->
+                                    <div class="circle" style="background-image: url({!$Resource[wrapper.textureString]}); background-size: 100px"></div>
+                                    <div class="triangle-up" style="background-image: url({!$Resource.Cone}); background-size: 150px"></div>
+                                    <br/>
+                                    <br/>
                                     {!wrapper.flavor.Name}
                                     <br/>
                                     {!wrapper.numberSold} scoops sold!
@@ -97,7 +97,7 @@
                                 <apex:repeat value="{!allFlavorWrappers}" var="flavor">
                                     <tr>
                                         
-                                        <td style='text-align:right'><div class="allFlavorsCircle" style="background: {!flavor.colorString}"></div>
+                                        <td style='text-align:right'><div class="allFlavorsCircle" style="background-image: url({!$Resource[flavor.textureString]}); background-size: 100px"></div>
                                             
                                         </td>
                                         <td style='text-align:left; vertical-align:middle'>{!flavor.flavor.name} at ${!flavor.priceString}/scoop</td>
