@@ -8,7 +8,6 @@ public class OrderBuilderTest {
         vanilla.Sale_Price_Per_Scoop__c = 1.50;
         vanilla.Current_Scoops_Removed__c = 0;
         vanilla.Quantity__c = 50;
-        vanilla.Color__c = 'white';
         insert vanilla;
         
         Ice_Cream_Flavor__c chocolate = new Ice_Cream_Flavor__c();
@@ -16,7 +15,6 @@ public class OrderBuilderTest {
         chocolate.Sale_Price_Per_Scoop__c = 2.00;
         chocolate.Current_Scoops_Removed__c = 0;
         chocolate.Quantity__c = 50;
-        chocolate.Color__c = 'brown';
         insert chocolate;
         
         Ice_Cream_Flavor__c mint = new Ice_Cream_Flavor__c();
@@ -24,7 +22,6 @@ public class OrderBuilderTest {
         mint.Sale_Price_Per_Scoop__c = 2.00;
         mint.Current_Scoops_Removed__c = 0;
         mint.Quantity__c = 50;
-        mint.Color__c = 'green';
         insert mint;
         
         // This flavor shouldn't be included in the controller's queries because it's empty!
@@ -33,7 +30,6 @@ public class OrderBuilderTest {
         emptyFlavor.Sale_Price_Per_Scoop__c = 0.00;
         emptyFlavor.Current_Scoops_Removed__c = 0;
         emptyFlavor.Quantity__c = 0;
-        emptyFlavor.Color__c = 'black';
         insert emptyFlavor;
         
         // Instantiate some novelty inventory items.

@@ -7,12 +7,10 @@ public class FlavorPageController {
     public String consoleString {get;set;}
     
     public FlavorPageController() {
-        List<Ice_Cream_Flavor__c> allFlavors = [SELECT Name, Sale_Price_Per_Scoop__c, Color__c FROM Ice_Cream_Flavor__c ORDER BY Name];
+        List<Ice_Cream_Flavor__c> allFlavors = [SELECT Name, Sale_Price_Per_Scoop__c, Image_Texture__c FROM Ice_Cream_Flavor__c ORDER BY Name];
         System.debug('All flavors' + allFlavors);
         
-        List<AggregateResult> mostPopular = [SELECT Ice_Cream_Flavor__r.Name, SUM(Scoop_Number__c)
-                                             FROM Sale__c GROUP BY Ice_Cream_Flavor__r.Name
-                                            ORDER BY SUM(Scoop_Number__c) DESC LIMIT 3];
+        List<AggregateResult> mostPopular = [SELECT Ice_Cream_Flavor__r.Name, SUM(Scoop_Number__c) FROM Sale__c GROUP BY Ice_Cream_Flavor__r.Name ORDER BY SUM(Scoop_Number__c) DESC LIMIT 3];
         
         flavorWrappers = new List<PopularFlavorWrapper>();
         for (AggregateResult ar : mostPopular) {
@@ -20,7 +18,6 @@ public class FlavorPageController {
             for (Ice_Cream_Flavor__c flavor : allFlavors) {
                 if (flavor.Name == ar.get('Name')) {
                     wrapper.flavor = flavor;
-            		wrapper.colorString = flavor.Color__c;
                     wrapper.priceString = String.valueOf(flavor.Sale_Price_Per_Scoop__c);
                 }
             }
@@ -31,7 +28,6 @@ public class FlavorPageController {
         allFlavorWrappers = new List<PopularFlavorWrapper>();
         for (Ice_Cream_Flavor__c flavor : allFlavors) {
             PopularFlavorWrapper wrapper = new PopularFlavorWrapper();
-            wrapper.colorString = flavor.Color__c;
             wrapper.priceString = String.valueOf(flavor.Sale_Price_Per_Scoop__c);
             wrapper.flavor = flavor;
             allFlavorWrappers.add(wrapper);
