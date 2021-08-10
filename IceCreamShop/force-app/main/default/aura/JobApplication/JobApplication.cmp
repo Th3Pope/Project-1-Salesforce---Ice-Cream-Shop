@@ -16,6 +16,7 @@
     
     <aura:if isTrue="{!v.showingFirstPage}">
         
+        <!-- First page, where you choose a job listing -->
         <lightning:card title="Job Listings">
             <div style="height: 300px">
                 <lightning:datatable
@@ -37,25 +38,25 @@
                     <div class="slds-col slds-size_1-of-2">
                         <lightning:input aura:id="firstNameIn" name="firstNameIn" label="First Name" required="true"/>
                         <lightning:input aura:id="lastNameIn" name="lastNameIn" label="Last Name" required="true" />
-                        <lightning:input aura:id="schoolNameIn" name="schoolNameIn" label="School Name" />
+                        <lightning:input aura:id="emailIn" name="emailIn" label="Email" required="true" />
+                        <lightning:input aura:id="phoneIn" name="phoneIn" label="Phone Number" />
                         <lightning:input aura:id="addressIn" name="addressIn" label="Address" />
                         <lightning:input aura:id="address2In" name="address2In" label="Address Line 2" />
                         <lightning:input aura:id="cityIn" name="cityIn" label="City" />
-                        <lightning:input aura:id="emailIn" name="emailIn" label="Email" required="true" />
-                        <lightning:input aura:id="phoneIn" name="phoneIn" label="Phone Number" />
-                    </div>
-                    <div class="slds-col slds-size_1-of-2">
-                        
-                        <lightning:input aura:id="secondLanguageIn" name="secondLanguageIn" label="Second Language (if applicable)" />
-                        <lightning:input aura:id="majorIn" name="majorIn" label="Major (if applicable)" />
-                        <lightning:input aura:id="zipIn" name="zipIn" label="Zip Code" />
-                        
                         <lightning:select aura:id="stateIn" name="stateIn" label="State">
                             <option value="">--None--</option>
                             <aura:iteration items="{!v.statePicklistFieldMap}" var="i" indexVar="key">
                                 <option text="{!i.value}" value="{!i.key}" />
                             </aura:iteration>
                         </lightning:select>
+                        <lightning:input aura:id="zipIn" name="zipIn" label="Zip Code" />
+                        
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        
+                        <lightning:input aura:id="secondLanguageIn" name="secondLanguageIn" label="Second Language (if applicable)" />
+                        <lightning:input aura:id="schoolNameIn" name="schoolNameIn" label="School Name" />
+                        <lightning:input aura:id="majorIn" name="majorIn" label="Major (if applicable)" />
                         
                         <lightning:select aura:id="educationLevelIn" name="educationLevelIn" label="Education Level">
                             <option value="">--None--</option>

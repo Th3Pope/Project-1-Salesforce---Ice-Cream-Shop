@@ -27,11 +27,12 @@ public class JobAppApexController {
                                                     jobApp.Job_Listing__c = listing.Id;
                                                     insert jobApp;
                                                 } catch (DMLException e) {
-                                                    System.debug('Exception thrown cjar');
-                                                    return 'Error: ' + e.getMessage();
+                                                    if (e.getNumDml() > 0) {
+                                                        return 'Error: ' + e.getDmlMessage(0);
+                                                    }
+                                                    return 'Unknown error; please try again.';
                                                 }
-                                                System.debug('success cjar');
-                                                return 'Job application successfully submitted!';
+                                                return 'Success';
                                             }
     
     @AuraEnabled 
