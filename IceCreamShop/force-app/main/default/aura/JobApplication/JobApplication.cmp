@@ -1,11 +1,10 @@
 <aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable" controller ="JobAppApexController">
     
-    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="listingTableData" type="Object"/>
     <aura:attribute name="columns" type="List"/>
     <aura:attribute name="applyButtonDisabled" type="Boolean" default="True"/>
     <aura:attribute name="selectedJobListing" type="Object"/>
     
-    <aura:attribute name="today" type="Date" default=""/>
     <aura:attribute name="statePicklistFieldMap" type="Map"/>
     <aura:attribute name="educationLevelPicklistFieldMap" type="Map"/>
     <aura:attribute name="graduatedPicklistFieldMap" type="Map"/>
@@ -18,24 +17,26 @@
         
         <!-- First page, where you choose a job listing -->
         <lightning:card title="Job Listings">
-            <div style="height: 300px">
+            <div style="height: 300px" class="slds-p-around_small">
                 <lightning:datatable
                                      columns="{! v.columns }"
-                                     data="{! v.data }"
+                                     data="{! v.listingTableData }"
                                      keyField="id"
                                      maxRowSelection="1"
                                      onrowselection="{! c.handleClickRadioButton }"/>
             </div>
             
-        <lightning:button variant="brand" label="Apply" title="Select" disabled="{!v.applyButtonDisabled}" onclick="{! c.goToFillOutFormPage }" />
+            <div class="slds-col slds-p-around_large">
+                <lightning:button variant="brand" label="Apply" title="Select" disabled="{!v.applyButtonDisabled}" onclick="{! c.goToFillOutFormPage }" />
+            </div>
         </lightning:card>
         
         <aura:set attribute="else">
-            <!-- Second page, where you actually enter the job app -->
             
+            <!-- Second page, where you actually enter the job app -->
             <lightning:card title="{!'New Job Application: ' + v.selectedJobListing.Name}">
-                <div class="slds-grid slds-wrap slds-gutters_x_large">
-                    <div class="slds-col slds-size_1-of-2">
+                <div class="slds-grid slds-wrap slds-gutters_x_large slds-p-around_small">
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_small">
                         <lightning:input aura:id="firstNameIn" name="firstNameIn" label="First Name" required="true"/>
                         <lightning:input aura:id="lastNameIn" name="lastNameIn" label="Last Name" required="true" />
                         <lightning:input aura:id="emailIn" name="emailIn" label="Email" required="true" />
@@ -52,7 +53,7 @@
                         <lightning:input aura:id="zipIn" name="zipIn" label="Zip Code" />
                         
                     </div>
-                    <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_small">
                         
                         <lightning:input aura:id="secondLanguageIn" name="secondLanguageIn" label="Second Language (if applicable)" />
                         <lightning:input aura:id="schoolNameIn" name="schoolNameIn" label="School Name" />
@@ -72,14 +73,16 @@
                             </aura:iteration>
                         </lightning:select>
                         
-                        <ui:inputDate aura:id="expdate" label="Graduation Date (if applicable)" class="field" value="{!v.today}" displayDatePicker="true" />     
+                        <ui:inputDate aura:id="expdate" label="Graduation Date (if applicable)" class="field" displayDatePicker="true" />     
                         
                         
                     </div>
                 </div>
                 
-                <lightning:button variant="Neutral" label="Cancel" title="Cancel" onclick="{! c.cancelApplication }" />
-                <lightning:button variant="brand" label="Submit" title="Submit Application" onclick="{! c.submitJobApplication }" />
+                <div class="slds-col slds-p-around_large">
+                    <lightning:button variant="Neutral" label="Cancel" title="Cancel" onclick="{! c.cancelApplication }" />
+                    <lightning:button variant="brand" label="Submit" title="Submit Application" onclick="{! c.submitJobApplication }" />
+                </div>
                 
                 <div aura:id="msg" class="hide">
                     <ui:outputDate aura:id="oDate" value="" />

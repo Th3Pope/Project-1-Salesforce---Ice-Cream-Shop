@@ -7,7 +7,7 @@
         
         component.set('v.columns', [
             {label: 'Name', fieldName: 'Name', type: 'text'},
-            {label: 'More Info', fieldName: 'More_Info__c', type: 'text'}
+            {label: 'More Info', fieldName: 'More_Info__c', type: 'text', wrapText: 'True'}
         ]);
         
         helper.getJobListings(component);

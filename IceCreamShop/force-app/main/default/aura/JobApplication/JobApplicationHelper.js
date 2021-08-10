@@ -21,7 +21,7 @@
             var state = response.getState();
             if (state === "SUCCESS") {
                 var result = response.getReturnValue();
-                component.set('v.data',result);
+                component.set('v.listingTableData',result);
             }
         });
         $A.enqueueAction(action);
