@@ -1,4 +1,4 @@
-<aura:component >
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
     <h1 style="text-align: center; font-weight: bold; color: #FF6B6B; font-style: italic;
     font-size: 8vh; -webkit-text-stroke: 1px black;">I Heart Ice Cream</h1>
     
