@@ -67,7 +67,7 @@
                         <br/>
                         <div id="podium">
                             
-                            <apex:repeat value="{!popFlavorWrappers}" var="wrapper">
+                            <apex:repeat value="{!popFlavorWrappersProp}" var="wrapper">
                                 <div>
                                     <div class="circle" style="background-image: url({!$Resource[wrapper.textureString]}); background-size: 100px"></div>
                                     <div class="triangle-up" style="background-image: url({!$Resource.Cone}); background-size: 150px"></div>
@@ -77,7 +77,7 @@
                                     <br/>
                                     {!wrapper.numberSold} scoops sold!
                                     <br/>
-                                    ${!wrapper.priceString}/scoop
+                                    ${!wrapper.priceString} per scoop
                                 </div>
                             </apex:repeat>
                         </div>
@@ -91,13 +91,13 @@
                             
                             <table style="width:400px">
                                 <col style="width: 30px;" />
-                                <apex:repeat value="{!allFlavorWrappers}" var="flavor">
+                                <apex:repeat value="{!allFlavorWrappersProp}" var="flavor">
                                     <tr>
                                         
                                         <td style='text-align:right'><div class="allFlavorsCircle" style="background-image: url({!$Resource[flavor.textureString]}); background-size: 100px"></div>
                                             
                                         </td>
-                                        <td style='text-align:left; vertical-align:middle'>{!flavor.flavor.name} at ${!flavor.priceString}/scoop</td>
+                                        <td style='text-align:left; vertical-align:middle'>{!flavor.flavor.name} at ${!flavor.priceString} per scoop</td>
                                     </tr>
                                 </apex:repeat>
                             </table>

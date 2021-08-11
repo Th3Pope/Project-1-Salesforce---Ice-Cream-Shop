@@ -1,18 +1,46 @@
-/* Copied over from the internal styling of the VisualForce equivalent. */
-.THIS .circle {
+/* Base class for the top 3 scoop graphics. */
+.THIS [class*="podiumScoop-"] {
     width: 90px;
     height: 90px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
     margin: 0 auto;
+    background-size: 100px
 }
 
-.THIS .triangle-up {
+/* Derived classes for each top scoop graphic. */
+.THIS .podiumScoop-Lemon {
+    background-image: url('/resource/1628692294000/Lemon');
+}
+
+.THIS .podiumScoop-Blueberry {
+    background-image: url('/resource/1628692294000/Blueberry');
+}
+
+.THIS .podiumScoop-Strawberry {
+    background-image: url('/resource/1628692294000/Strawberry');
+}
+
+.THIS .podiumScoop-Mint {
+    background-image: url('/resource/1628692294000/Mint');
+}
+
+.THIS .podiumScoop-Chocolate {
+    background-image: url('/resource/1628692294000/Chocolate');
+}
+
+.THIS .podiumScoop-Vanilla {
+    background-image: url('/resource/1628692294000/Vanilla');
+}
+
+.THIS .podiumCone {
 	width: 150px;
     height: 130px;
     clip-path: polygon(20% 0%, 80% 0%, 50% 100%);
     margin: -30px auto;
+    background-image: url('/resource/1628692294000/Cone');
+    background-size: 150px;
 }
 
 .THIS #podium {
@@ -33,12 +61,39 @@
 	font-size: 20px;
 }
 
-.THIS .allFlavorsCircle {
+/* Base class for the flavor icons. */
+.THIS [class*="flavorIcon-"] {
 	width: 25px;
     height: 25px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
     background: gray;
+    background-size: 100px;
     float: left;
+}
+
+/* Derived classes for each flavor icon. */
+.THIS .flavorIcon-Lemon {
+    background-image: url('/resource/1628692294000/Lemon');
+}
+
+.THIS .flavorIcon-Blueberry {
+    background-image: url('/resource/1628692294000/Blueberry');
+}
+
+.THIS .flavorIcon-Strawberry {
+    background-image: url('/resource/1628692294000/Strawberry');
+}
+
+.THIS .flavorIcon-Mint {
+    background-image: url('/resource/1628692294000/Mint');
+}
+
+.THIS .flavorIcon-Chocolate {
+    background-image: url('/resource/1628692294000/Chocolate');
+}
+
+.THIS .flavorIcon-Vanilla {
+    background-image: url('/resource/1628692294000/Vanilla');
 }

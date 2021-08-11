@@ -5,19 +5,55 @@
     <aura:attribute name="allFlavorWrappers" type="PopularFlavorWrapper[]"/>
     
     <!-- Event handler that retrieves the necessary flavor data before the component is rendered. -->
-    <aura:handler name="initialization" value="{!this}" action="{!c.getFlavorData}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.getFlavorData}"/>
     
     <!-- Externally styled header bar and text for the component. -->
 	<div class="header">
     	<h1 class="headerText">I Heart Ice Cream </h1>         
     </div>
     
-    <!-- Layout for the top 3 flavor graphics -->
-    <lightning:layout>
-    	<aura:iteration items="1,2,3" var="flavor">
-        	<lightning:layoutItem padding="around-small">
-        		<div class="custom-box">"{!flavor}"</div>
-        	</lightning:layoutItem>
-        </aura:iteration>
-  	</lightning:layout>
+    <div id="podiumContainer">
+    	<h2>Our Most Popular Flavors</h2>
+        
+        <br/>
+        <br/>
+        
+        <!-- Div for "Top-3" podium. -->
+    	<div id="podium">
+        	<aura:iteration items="{!v.popFlavorWrappers}" var="flavor">
+            	<div>
+            		<div class="{!'podiumScoop-' + flavor.textureString}"></div>
+                	<div class="podiumCone" ></div>
+                	<br/>
+                	<br/>
+                	{!flavor.nameString}
+                	<br/>
+                	{!flavor.numberSold} scoops sold!
+                	<br/>
+                	${!flavor.priceString} per scoop
+            	</div>
+            </aura:iteration>
+    	</div>
+        
+        <br/>
+        <br/>
+        
+        <!-- Div for "All Flavors" list. -->
+        <div style='padding:20px'>
+    		<h2>All Flavors</h2>
+            
+        	<br/>
+        	<br/>
+                            
+        	<table style="width:400px">
+        		<col style="width: 30px;" />
+        		<aura:iteration items="{!v.allFlavorWrappers}" var="flavor">
+        			<tr>                    
+                    	<td style='text-align:right'> <div class="{!'flavorIcon-' + flavor.textureString}"></div> </td>
+                        <td style='text-align:left; vertical-align:middle'> {!flavor.nameString} at ${!flavor.priceString} per scoop </td>
+            		</tr>
+        		</aura:iteration>
+    		</table>
+		</div>
+    </div>
 </aura:component>
