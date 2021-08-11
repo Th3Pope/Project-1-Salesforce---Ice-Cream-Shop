@@ -1,0 +1,17 @@
+<aura:component >
+    <h1 style="text-align: center; font-weight: bold; color: #FF6B6B; font-style: italic;
+    font-size: 8vh; -webkit-text-stroke: 1px black;">I Heart Ice Cream</h1>
+    
+    <div class="flexed">
+        <div class="group" style="padding-right:25px;">
+            <img src="{!$Resource.earlyDaysJPG }" style="height: 300px; border-radius: 50%;"> </img>
+            <h1 class="text" style="text-align: center; font-weight: bold;">Jim Heart, and his first Ice Cream truck. <br/> June 1969</h1>
+        </div>
+        <div style="padding-left:25px;">
+            <img src="{!$Resource.employeeJPG }" style="height: 425px; border-radius: 50%;
+            filter: grayscale(100%);"> </img>
+            <h1 class="text" style="text-align: center; font-weight: bold;">Peggy serving up a cone.<br/>Current day 2021</h1> 
+        </div>
+    </div>
+    
+</aura:component>

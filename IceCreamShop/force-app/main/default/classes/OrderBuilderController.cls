@@ -1,12 +1,14 @@
 public class OrderBuilderController {
     // Lists to hold available flavors and cone/bowl novelties.
-    @AuraEnabled
-    public static List<Ice_Cream_Flavor__c> stockedFlavors {get; set;}
+    
+    public List<Ice_Cream_Flavor__c> stockedFlavors {get; set;}
+
+    
     public List<Inventory__c> stockedNovelties {get; set;}
     
     // Properties that store customer choices/input.
-    @AuraEnabled
-    public static Integer selectedFlavorIndex {get; set;}
+    
+    public Integer selectedFlavorIndex {get; set;}
     public Integer selectedNoveltyIndex {get; set;}
     public Integer customerScoopCount {get; set;}
     public Decimal orderPrice {get; set;}
@@ -107,15 +109,52 @@ public class OrderBuilderController {
     {
         try 
         {
-            if(stockedFlavors == null)
-            {
-                stockedFlavors = [SELECT Name, Flavor_Index__c, Sale_Price_Per_Scoop__c, Quantity__c FROM Ice_Cream_Flavor__c WHERE Quantity__c > 0  ORDER By Name];
-            }
+          return [SELECT Name, Flavor_Index__c, Sale_Price_Per_Scoop__c, Quantity__c FROM Ice_Cream_Flavor__c WHERE Quantity__c > 0  ORDER By Name];
+            
 
-            return stockedFlavors;
+          //  return stockedFlavors;
             
         } catch (Exception e) {
             
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+
+    // Helper that returns a list of selectable novelties for customers to choose from.   
+    @AuraEnabled(cacheable=true)
+    public static List <Inventory__c> getNoveltiesForAura() 
+    { 
+        try 
+        {
+            
+                return [SELECT Name, Quantity__c FROM Inventory__c 
+                                    WHERE Is_Ice_Cream__c = false AND Ice_Cream_Flavor__c = null 
+                                    AND Quantity__c > 0  ORDER By Name];
+           // }      
+           // return stockedNovelties;
+        } catch (Exception e) {                
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+
+    @AuraEnabled//(cacheable=true)
+    public static Decimal saveNewOrder(Integer numScoops, String flavId, String noveltyId)//, List<Ice_Cream_Flavor__c> flavList)
+    {
+        try 
+        {         
+            Sale__c customerOrder = new Sale__c();
+            customerOrder.Ice_Cream_Flavor__c = flavId;
+            customerOrder.Scoop_Number__c = numScoops;            
+            customerOrder.Cone_Or_Bowl__c = noveltyId;
+        
+            insert customerOrder;
+            ID custId = customerOrder.ID; 
+
+            SObject sObj =   Database.query( 'SELECT Amount_Due__c FROM Sale__c WHERE Id = :custId LIMIT 1'); 
+            Sale__c price = (Sale__c) sObj; 
+            return price.Amount_Due__c;
+            
+        } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
     }
