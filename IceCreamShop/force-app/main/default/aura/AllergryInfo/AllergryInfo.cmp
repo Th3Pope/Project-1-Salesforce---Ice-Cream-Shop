@@ -1,0 +1,91 @@
+<aura:component controller= "ControllerAllergy">
+    <aura:attribute name="flavor" type = "String"/>
+	<lightning:card title="Allergy Information">
+        
+        <div>
+            <label>Flavor Name: 
+            {!v.flavor.Ice_Cream_Flavor__r.Name}
+            </label>
+        </div>
+        
+        <div>
+            <label>Name:   
+                {!v.flavor.Name}            
+            </label>
+        </div>
+      	
+        
+        <div>
+            <label>All Ingredients: 
+            {!v.flavor.Pick_Ingredients__c}
+            </label>
+        </div>
+        <br></br>
+        <br></br>
+        
+        
+        <h1>NUTRITIONAL FACTS</h1>
+        <br></br>
+        <h1>In a 1/2 cup serving</h1>
+        <br></br>
+       
+        
+        <div>
+            <label>Calories: 
+            {!v.flavor.Calories__c}
+            </label>
+        </div>
+        
+        <div>
+            <label>Fat: 
+            {!v.flavor.Fat_g__c}
+            </label>
+        </div>
+        
+        
+        <div>
+            <label>Cholesterol(mg): 
+            {!v.flavor.Cholesterol_mg__c}
+            </label>
+        </div>
+        
+        <div>
+            <label>Carbs(g): 
+            {!v.flavor.Carbs_g__c}
+            </label>
+        </div>
+        
+        
+        
+        <div>
+            <label>Sugars(g): 
+            {!v.flavor.Sugars_g__c}
+            </label>
+        </div>
+        
+        <div>
+            <label>Protein(g): 
+            {!v.flavor.Protein_g__c}
+            </label>
+        </div>
+        
+       <!-- <div>
+            <label>Allergy: 
+            {!v.flavor.Allergy__c}
+            </label>
+        </div> -->
+        
+     <div onkeyup="{!c.getInfo}">
+        <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            label="Search when user hits the 'enter' key"
+            type="search"
+        />
+    </div>
+        
+        
+        
+    </lightning:card>
+   <!-- <lightning:button label = "Flavor Information" onclick="{!c.getInfo}"/> -->
+</aura:component>
