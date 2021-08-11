@@ -1,0 +1,7 @@
+.THIS {
+    background-color: #F7FFF7; 
+}
+.flexed.THIS{
+    display:flex;
+    justify-content: center;
+}

@@ -1,0 +1,46 @@
+.THIS{
+    font-size: 24px;
+    height: 100%;
+    width:100vw;
+    background-color: #F7FFF7; 
+}
+.dataTbl.THIS {
+    color: #4ECDC4;
+    padding-bottom: 2vh; 
+}
+.dropDown.THIS{
+    color: #1A535C;
+}
+.THIS.dataTbl thead th span {
+     color: #1A535C; 
+}
+ .THIS label{
+    font-size: 24px;
+    color: #1A535C;
+    font-weight: bold;
+} 
+.THIS select{
+    height:100%;
+}
+.radioGroup.THIS{
+    font-size: 24px;
+}
+.THIS legend{
+    
+    color:#1A535C;
+    font-size: 24px;
+}
+ .THIS.options {
+    padding-left: 50px;
+} 
+.total.THIS{
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 2vh; 
+}
+.button.THIS{
+    width: 80px;
+    color: #FF6B6B;
+    background-color: #FFE66D;
+    border: 1px solid #1A535C;
+}
