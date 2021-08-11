@@ -1,9 +1,10 @@
 public class FlavorPageController {
 
     public List<Ice_Cream_Flavor__c> allFlavors {get; set;}
-    public List<PopularFlavorWrapper> popFlavorWrappers {get;set;}
-    public List<PopularFlavorWrapper> allFlavorWrappers {get;set;}
-    
+    @AuraEnabled
+    public List<PopularFlavorWrapper> popFlavorWrappers {get; set;}
+    @AuraEnabled
+    public List<PopularFlavorWrapper> allFlavorWrappers {get; set;}
     public String consoleString {get;set;}
     
     public FlavorPageController() {

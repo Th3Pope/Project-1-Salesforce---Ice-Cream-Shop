@@ -1,22 +1,18 @@
-/* Internal stylings copied over from FlavorPage.vfp. */
-
+/* Copied over from the internal styling of the VisualForce equivalent. */
 .THIS .circle {
-	width: 90px;
+    width: 90px;
     height: 90px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    background: gray;
-    margin: 0 auto; /* Centers horizontally */
+    margin: 0 auto;
 }
-        
+
 .THIS .triangle-up {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 100px solid #E2B886;
-    margin: -30px auto; /* Centers horizontally */
+	width: 150px;
+    height: 130px;
+    clip-path: polygon(20% 0%, 80% 0%, 50% 100%);
+    margin: -30px auto;
 }
 
 .THIS #podium {
@@ -28,17 +24,17 @@
 }
 
 .THIS #podiumContainer {
-    width: 400px;
-    vertical-align: middle;
-    text-align: center;
+	width: 400px;
+	vertical-align: middle;
+	text-align: center;
 }
 
 .THIS h2 {
-    font-size: 20px;
+	font-size: 20px;
 }
 
 .THIS .allFlavorsCircle {
-    width: 25px;
+	width: 25px;
     height: 25px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;

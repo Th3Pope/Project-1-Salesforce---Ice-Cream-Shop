@@ -1,5 +1,6 @@
 ({
-	getFlavorData : function(component, event) {
-		
+	getFlavorData : function(component) {
+		popularFlavorsHelper(component);
+        allFlavorsHelper(component);
 	}
 })
