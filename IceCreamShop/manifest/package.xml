@@ -34,6 +34,7 @@
 		<members>SideBar</members>
 		<members>SubmitPage</members>
     <members>test1</members>
+    <members>ForgotPassword</members>
     <name>ApexPage</name>
   </types>
   <types>

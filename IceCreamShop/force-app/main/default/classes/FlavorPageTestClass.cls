@@ -41,9 +41,9 @@ public class FlavorPageTestClass {
         FlavorPageController controller = new FlavorPageController();
         
         // Test that the controller's allFlavors and flavorWrappers are correct
-        System.assertEquals(2,controller.allFlavors.size());
-        System.assertEquals(15, controller.allFlavorWrappers[0].numberSold);
-        System.assertEquals(6, controller.allFlavorWrappers[1].numberSold);
-        System.assertEquals('blue flavor', controller.allFlavorWrappers[0].flavor.Name);
+        System.assertEquals(2,FlavorPageController.allFlavorWrappers.size());
+        System.assertEquals(15, FlavorPageController.allFlavorWrappers[0].numberSold);
+        System.assertEquals(6, FlavorPageController.allFlavorWrappers[1].numberSold);
+        System.assertEquals('blue flavor', FlavorPageController.allFlavorWrappers[0].flavor.Name);
     }
 }

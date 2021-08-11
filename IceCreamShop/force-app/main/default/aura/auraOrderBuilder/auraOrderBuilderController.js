@@ -1,8 +1,5 @@
 ({
-    init: function (cmp, event, helper) 
-	{
-		
+	myAction : function(component, event, helper) {
 		
 	}
-
 })
