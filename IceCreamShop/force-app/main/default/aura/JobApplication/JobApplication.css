@@ -1,9 +1,6 @@
 .THIS {
+    font-size: 18px;
     background-color: #F7FFF7 !important; 
     border: 2px solid #1A535C !important; 
     border-radius: 8px;
-}
-.flexed.THIS{
-    display:flex;
-    justify-content: center;
 }

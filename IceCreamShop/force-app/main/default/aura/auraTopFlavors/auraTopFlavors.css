@@ -1,3 +1,12 @@
+/* Note: For the texture links, '/sfsites/c' is necessary to get the links working on our homepage. */
+
+.THIS {
+    font-size: 18px;
+    background-color: #F7FFF7 !important; 
+    border: 2px solid #1A535C !important; 
+    border-radius: 8px;
+}
+
 /* Base class for the top 3 scoop graphics. */
 .THIS [class*="podiumScoop-"] {
     width: 90px;
@@ -6,32 +15,32 @@
     -moz-border-radius: 50%;
     border-radius: 50%;
     margin: 0 auto;
-    background-size: 100px
+    background-size: 100px;
 }
 
 /* Derived classes for each top scoop graphic. */
 .THIS .podiumScoop-Lemon {
-    background-image: url('/resource/1628692294000/Lemon');
+    background-image: url('/sfsites/c/resource/1628692294000/Lemon');
 }
 
 .THIS .podiumScoop-Blueberry {
-    background-image: url('/resource/1628692294000/Blueberry');
+    background-image: url('/sfsites/c/resource/1628692294000/Blueberry');
 }
 
 .THIS .podiumScoop-Strawberry {
-    background-image: url('/resource/1628692294000/Strawberry');
+    background-image: url('/sfsites/c/resource/1628692294000/Strawberry');
 }
 
 .THIS .podiumScoop-Mint {
-    background-image: url('/resource/1628692294000/Mint');
+    background-image: url('/sfsites/c/resource/1628692294000/Mint');
 }
 
 .THIS .podiumScoop-Chocolate {
-    background-image: url('/resource/1628692294000/Chocolate');
+    background-image: url('/sfsites/c/resource/1628692294000/Chocolate');
 }
 
 .THIS .podiumScoop-Vanilla {
-    background-image: url('/resource/1628692294000/Vanilla');
+    background-image: url('/sfsites/c/resource/1628692294000/Vanilla');
 }
 
 .THIS .podiumCone {
@@ -39,14 +48,16 @@
     height: 130px;
     clip-path: polygon(20% 0%, 80% 0%, 50% 100%);
     margin: -30px auto;
-    background-image: url('/resource/1628692294000/Cone');
+    background-image: url('/sfsites/c/resource/1628692294000/Cone');
     background-size: 150px;
 }
 
 .THIS #podium {
     width: 400px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
     vertical-align: middle;
     text-align: center;
 }
@@ -57,43 +68,9 @@
 	text-align: center;
 }
 
-.THIS h2 {
-	font-size: 20px;
-}
-
-/* Base class for the flavor icons. */
-.THIS [class*="flavorIcon-"] {
-	width: 25px;
-    height: 25px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    background: gray;
-    background-size: 100px;
-    float: left;
-}
-
-/* Derived classes for each flavor icon. */
-.THIS .flavorIcon-Lemon {
-    background-image: url('/resource/1628692294000/Lemon');
-}
-
-.THIS .flavorIcon-Blueberry {
-    background-image: url('/resource/1628692294000/Blueberry');
-}
-
-.THIS .flavorIcon-Strawberry {
-    background-image: url('/resource/1628692294000/Strawberry');
-}
-
-.THIS .flavorIcon-Mint {
-    background-image: url('/resource/1628692294000/Mint');
-}
-
-.THIS .flavorIcon-Chocolate {
-    background-image: url('/resource/1628692294000/Chocolate');
-}
-
-.THIS .flavorIcon-Vanilla {
-    background-image: url('/resource/1628692294000/Vanilla');
+.THIS h2{
+    font-size: 24px;
+    color: #1A535C;
+    font-weight: bold;
+    text-align: center;
 }
