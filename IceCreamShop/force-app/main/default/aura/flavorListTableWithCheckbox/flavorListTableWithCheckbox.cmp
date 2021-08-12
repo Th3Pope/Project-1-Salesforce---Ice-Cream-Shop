@@ -7,7 +7,7 @@
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
     <div class="full">
         <h1 class="slds-align_absolute-center" style=" font-weight: bold; padding-top: 2vh; padding-bottom: 2vh;color: #1A535C;" >Please Select Your Flavor: </h1>
-        <div class="dataTbl slds-align_absolute-center" style="width: 50vw; border: 1px solid #1A535C">
+        <div class="dataTbl slds-align_absolute-center" style="width: 60%; border: 1px solid #1A535C">
 
         <lightning:datatable aura:id="table"
             data="{! v.recordData }"
@@ -19,7 +19,7 @@
     <!--Basic drop down-->
     <div class="full">
         <h1 class="slds-align_absolute-center" style=" font-weight: bold; padding-top: 2vh; color: #1A535C;" >How Many Scoops?</h1>
-        <div style="width: 50vw;" class="slds-align_absolute-center">
+        <div style="width: 60%;" class="slds-align_absolute-center">
         
             <lightning:select aura:id="select" name="select"  label=""
                             onchange="{! c.selectedScoopNum }" >
@@ -44,7 +44,7 @@
     <div class="full">
         <h1 class="slds-align_absolute-center" style=" font-weight: bold; padding-top: 2vh; color: #1A535C;" >Dish Preference?</h1>
 
-        <div style="width: 50vw; padding-top: 1vh; padding-bottom: 2vh;" class="slds-align_absolute-center">
+        <div style="width: 60%; padding-top: 1vh; padding-bottom: 2vh;" class="slds-align_absolute-center">
         <lightning:radioGroup name="radioGroup"
                             label=""
                             options="{! v.options }"
@@ -56,14 +56,14 @@
     </div>
     <aura:attribute name="total" type="Decimal" default="0.00"/>
     <div class="full">
-        <div style="width: 50vw; font-weight: bold;" class="slds-align_absolute-center">
+        <div style="width: 60%; font-weight: bold;" class="slds-align_absolute-center">
             <h1>Total: $ {! v.total}</h1>
         </div>
     </div>
     <div class="full">
-        <div style="width: 50vw; padding-top: 1vh;" class="slds-align_absolute-center ">
+        <div style="width: 60%; padding-top: 1vh;" class="slds-align_absolute-center ">
         <!-- Success variant: Identifies a successful action -->
-            <button  label="Checkout" title="Order Now" onclick="{! c.buttonClickHandler}" style="width: 50vw; height:80px; color: #FF6B6B; background-color: #FFE66D; border: 1px solid #1A535C;">Check Out</button>
+            <button  label="Checkout" title="Order Now" onclick="{! c.buttonClickHandler}" style="width: 60%; height:80px; color: #FF6B6B; background-color: #FFE66D; border: 1px solid #1A535C;">Check Out</button>
         </div>
     </div>
 

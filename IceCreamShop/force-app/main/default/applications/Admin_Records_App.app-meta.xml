@@ -20,6 +20,8 @@
     <tabs>Sale__c</tabs>
     <tabs>Vendor__c</tabs>
     <tabs>Staff__c</tabs>
+    <tabs>Job_Listing__c</tabs>
+    <tabs>Job_Application__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Admin_Records_App_UtilityBar</utilityBar>
 </CustomApplication>

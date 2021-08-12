@@ -1,5 +1,4 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable" controller ="JobAppApexController">
-    
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable,forceCommunity:availableForAllPageTypes" controller ="JobAppApexController" access="global">
     <aura:attribute name="listingTableData" type="Object"/>
     <aura:attribute name="columns" type="List"/>
     <aura:attribute name="applyButtonDisabled" type="Boolean" default="True"/>
@@ -17,7 +16,7 @@
         
         <!-- First page, where you choose a job listing -->
         <lightning:card title="Job Listings">
-            <div style="height: 300px" class="slds-p-around_small">
+            <div style="height: 60%" class="slds-p-around_small">
                 <lightning:datatable
                                      columns="{! v.columns }"
                                      data="{! v.listingTableData }"

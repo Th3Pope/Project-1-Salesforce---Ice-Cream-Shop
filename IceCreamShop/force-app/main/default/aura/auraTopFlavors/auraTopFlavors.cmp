@@ -1,5 +1,5 @@
 <!-- This component levereges the functionality present in Theo's VisualForce Flavor Page controller. -->
-<aura:component controller="FlavorPageController">
+<aura:component controller="FlavorPageController" implements="forceCommunity:availableForAllPageTypes" access="global">
     <!-- Attributes used to store flavor data from the server. -->
     <aura:attribute name="popFlavorWrappers" type="PopularFlavorWrapper[]"/>
     <aura:attribute name="allFlavorWrappers" type="PopularFlavorWrapper[]"/>

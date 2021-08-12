@@ -1,6 +1,17 @@
-<aura:component controller= "ControllerAllergy">
+<aura:component controller= "ControllerAllergy" implements="forceCommunity:availableForAllPageTypes" access="global">
     <aura:attribute name="flavor" type = "String"/>
 	<lightning:card title="Allergy Information">
+        
+        <div onkeyup="{!c.getInfo}">
+        	<lightning:input
+            	aura:id="enter-search"
+            	name="enter-search"
+            	label="Search when user hits the 'enter' key"
+            	type="search"
+        	/>
+    	</div>
+        
+        <br/>
         
         <div>
             <label>Flavor Name: 
@@ -69,22 +80,13 @@
             </label>
         </div>
         
-       <!-- <div>
+       <div>
             <label>Allergy: 
             {!v.flavor.Allergy__c}
             </label>
-        </div> -->
+       </div>
         
-     <div onkeyup="{!c.getInfo}">
-        <lightning:input
-            aura:id="enter-search"
-            name="enter-search"
-            label="Search when user hits the 'enter' key"
-            type="search"
-        />
-    </div>
-        
-        
+ 
         
     </lightning:card>
    <!-- <lightning:button label = "Flavor Information" onclick="{!c.getInfo}"/> -->
