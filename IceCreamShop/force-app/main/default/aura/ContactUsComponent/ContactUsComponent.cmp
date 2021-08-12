@@ -10,6 +10,7 @@
                 <lightning:input aura:id="firstNameIn" name="firstNameIn" label="First Name" required="true"/>
                 <lightning:input aura:id="lastNameIn" name="lastNameIn" label="Last Name" required="true" />
                 <lightning:input aura:id="emailIn" name="emailIn" label="Email" required="true" />
+                <lightning:input aura:id="subjectIn" name="subjectIn" label="Subject" />
                 <lightning:textarea aura:id="messageIn" name="messageIn" label="Message" maxlength="300" />
             </div>
         </div>
