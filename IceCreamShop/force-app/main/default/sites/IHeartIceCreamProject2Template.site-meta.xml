@@ -4,9 +4,9 @@
     <allowHomePage>false</allowHomePage>
     <allowStandardAnswersPages>false</allowStandardAnswersPages>
     <allowStandardIdeasPages>false</allowStandardIdeasPages>
-    <allowStandardLookups>false</allowStandardLookups>
+    <allowStandardLookups>true</allowStandardLookups>
     <allowStandardPortalPages>true</allowStandardPortalPages>
-    <allowStandardSearch>false</allowStandardSearch>
+    <allowStandardSearch>true</allowStandardSearch>
     <authorizationRequiredPage>CommunitiesLogin</authorizationRequiredPage>
     <bandwidthExceededPage>BandwidthExceeded</bandwidthExceededPage>
     <browserXssProtection>true</browserXssProtection>
