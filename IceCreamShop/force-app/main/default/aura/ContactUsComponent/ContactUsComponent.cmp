@@ -1,0 +1,22 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable,forceCommunity:availableForAllPageTypes" access="global" controller ="ContactUsApexController">
+    
+    <aura:attribute name="applyButtonDisabled" type="Boolean" default="True"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card title="Contact Us">
+        <div class="slds-grid slds-wrap slds-gutters_x_large slds-p-around_small">
+            <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+                <lightning:input aura:id="firstNameIn" name="firstNameIn" label="First Name" required="true"/>
+                <lightning:input aura:id="lastNameIn" name="lastNameIn" label="Last Name" required="true" />
+                <lightning:input aura:id="emailIn" name="emailIn" label="Email" required="true" />
+                <lightning:textarea aura:id="messageIn" name="messageIn" label="Message" maxlength="300" />
+            </div>
+        </div>
+        
+        <div class="slds-col slds-p-around_large">
+            <lightning:button variant="brand" label="Send" title="Send Message" onclick="{! c.sendMessage }" />
+        </div>
+    </lightning:card>
+    
+</aura:component>
