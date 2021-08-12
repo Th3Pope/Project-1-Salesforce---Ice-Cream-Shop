@@ -1,15 +1,4 @@
-({
-	popFlavorsHelper : function(component) {
-    	let getterAction = component.get("c.getPopWrappers");
-        getterAction.setCallback(this, function(response){
-            let state = response.getState();
-            if (component.isValid() && state == "SUCCESS") {
-                 component.set("v.popFlavorWrappers", response.getReturnValue());
-            }
-        });
-        $A.enqueueAction(getterAction);
-	},
-    
+({  
     allFlavorsHelper : function(component) {
 		let getterAction = component.get("c.getAllWrappers");
         getterAction.setCallback(this, function(response){
@@ -19,5 +8,11 @@
             }
         });
         $A.enqueueAction(getterAction);
-	}
+	},
+    
+    setFlavorHelper : function(component, event) {
+        let flavorId = event.getSource().get("v.value");
+        let orderComponent = component.find("orderComponent");
+        orderComponent.setFlavorId(flavorId);
+    }
 })

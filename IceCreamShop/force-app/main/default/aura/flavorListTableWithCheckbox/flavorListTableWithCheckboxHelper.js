@@ -1,7 +1,6 @@
 ({
     scoopNumber: 0,
     flavorId: '',
-    flavorNumSelected: 0,
     noveltyId: '',
   
     setScoopNumber : function(num)
@@ -12,12 +11,11 @@
         }          
     },
 
-    setSelectedFlavor : function(flavor)
+    setSelectedFlavor : function(inputId)
     {
-        if(flavor != '')
+        if(inputId != '')
         {
-            this.flavorId = flavor[0].Id;
-            this.flavorNumSelected = flavor.length;     
+            this.flavorId = inputId;   
         }
     },
 
@@ -31,8 +29,7 @@
 
     createRecord : function(cmp)
     {
-       if(this.scoopNumber > 0 && this.flavorId != '' 
-           && this.flavorNumSelected == 1 && this.noveltyId != '')
+       if(this.scoopNumber > 0 && this.flavorId != '' && this.noveltyId != '')
        {
             let call = cmp.get("c.saveNewOrder");
       

@@ -1,7 +1,6 @@
 <!-- This component levereges the functionality present in Theo's VisualForce Flavor Page controller. -->
 <aura:component controller="FlavorPageController" implements="forceCommunity:availableForAllPageTypes" access="global">
     <!-- Attributes used to store flavor data from the server. -->
-    <aura:attribute name="popFlavorWrappers" type="PopularFlavorWrapper[]"/>
     <aura:attribute name="allFlavorWrappers" type="PopularFlavorWrapper[]"/>
     
     <!-- Event handler that retrieves the necessary flavor data before the component is rendered. -->
@@ -16,17 +15,20 @@
         
         	<!-- Div for "Top-3" podium. -->
     		<div id="podium">
-        	   <aura:iteration items="{!v.allFlavorWrappers}" var="flavor">
+        	   <aura:iteration items="{!v.allFlavorWrappers}" var="wrapper">
             	   <div>
-            		   <div class="{!'podiumScoop-' + flavor.textureString}"></div>
+            		   <div class="{!'podiumScoop-' + wrapper.textureString}"></div>
                 	   <div class="podiumCone" ></div>
                 	   <br/>
                 	   <br/>
-                	   {!flavor.nameString}
+                	   {!wrapper.nameString}
                 	   <br/>
-                       ${!flavor.priceString} per scoop
+                       ${!wrapper.priceString} per scoop
+                       <lightning:button  label="Select Flavor" title="Select this flavor for your next order" value = "{!wrapper.flavor.Id}" onclick="{!c.setFlavorChoice}"> Select Flavor </lightning:button>
                    </div>
          	   </aura:iteration>
     		</div>
     	</div>
+    
+    	<c:flavorListTableWithCheckbox aura:id="orderComponent"/>
 </aura:component>

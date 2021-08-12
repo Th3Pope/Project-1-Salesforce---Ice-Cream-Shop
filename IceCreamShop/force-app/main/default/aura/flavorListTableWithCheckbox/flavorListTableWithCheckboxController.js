@@ -5,9 +5,13 @@
 		helper.setRadioButtonsForDish(cmp);
 	},
 
-	getSelectedFlavor: function (cmp, event, helper) 
+	getSelectedFlavor: function (component, event, helper) 
 	{
-		helper.setSelectedFlavor(event.getParam('selectedRows')); 
+        let params = event.getParam('arguments');
+        if (params) {
+            let Id = params.Id;
+            helper.setSelectedFlavor(Id); 
+        }
 	},
 
 	selectedScoopNum: function (cmp, evt, helper) 

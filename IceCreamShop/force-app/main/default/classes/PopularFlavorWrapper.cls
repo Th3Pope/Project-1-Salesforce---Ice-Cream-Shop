@@ -1,4 +1,5 @@
 public class PopularFlavorWrapper {
+    @AuraEnabled
     public Ice_Cream_Flavor__c flavor {get; set;}
     @AuraEnabled
     public String nameString {get; set;}

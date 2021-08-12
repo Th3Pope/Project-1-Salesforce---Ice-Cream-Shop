@@ -1,6 +1,9 @@
 ({
 	getFlavorData : function(component, event, helper) {
-		helper.popFlavorsHelper(component);
         helper.allFlavorsHelper(component);
+	},
+    
+    setFlavorChoice : function(component, event, helper) {
+    	helper.setFlavorHelper(component, event);
 	}
 })

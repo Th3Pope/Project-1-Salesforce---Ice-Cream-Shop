@@ -1,10 +1,15 @@
 <aura:component controller="OrderBuilderController" implements="forceCommunity:availableForAllPageTypes" access="global" >
+    
+    <aura:method name="setFlavorId" action="{!c.getSelectedFlavor}" access="public">
+        <aura:attribute name="Id" type="String"/> 
+    </aura:method>
 
 
 <!--Record table w checkbox for icecream price and flavor-->
     <aura:attribute name="recordData" type="Ice_Cream_Flavor__c[]"/>
     <aura:attribute name="colLabels" type="List"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+<!--
     <div class="full">
         <h1 class="slds-align_absolute-center" style=" font-weight: bold; padding-top: 2vh; padding-bottom: 2vh;color: #1A535C;" >Please Select Your Flavor: </h1>
         <div class="dataTbl slds-align_absolute-center" style="width: 60%; border: 1px solid #1A535C">
@@ -16,6 +21,7 @@
             onrowselection="{! c.getSelectedFlavor }"/> 
         </div>
     </div>
+-->
     <!--Basic drop down-->
     <div class="full">
         <h1 class="slds-align_absolute-center" style=" font-weight: bold; padding-top: 2vh; color: #1A535C;" >How Many Scoops?</h1>
@@ -59,12 +65,10 @@
         <div style="width: 60%; font-weight: bold;" class="slds-align_absolute-center">
             <h1>Total: $ {! v.total}</h1>
         </div>
-    </div>
-    <div class="full">
+        <br/>
         <div style="width: 60%; padding-top: 1vh;" class="slds-align_absolute-center ">
         <!-- Success variant: Identifies a successful action -->
             <button  label="Checkout" title="Order Now" onclick="{! c.buttonClickHandler}" style="width: 60%; height:80px; color: #FF6B6B; background-color: #FFE66D; border: 1px solid #1A535C;">Check Out</button>
         </div>
     </div>
-
 </aura:component>
