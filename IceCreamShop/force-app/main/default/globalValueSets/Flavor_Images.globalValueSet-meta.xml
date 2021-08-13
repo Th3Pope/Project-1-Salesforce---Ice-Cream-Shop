@@ -30,6 +30,16 @@
         <default>true</default>
         <label>Vanilla</label>
     </customValue>
+    <customValue>
+        <fullName>Peppermint</fullName>
+        <default>false</default>
+        <label>Peppermint</label>
+    </customValue>
+    <customValue>
+        <fullName>Grey</fullName>
+        <default>false</default>
+        <label>Grey</label>
+    </customValue>
     <description>A list of flavor image names that have corresponding ice cream image textures stored as static resources.</description>
     <masterLabel>Flavor Images</masterLabel>
     <sorted>true</sorted>

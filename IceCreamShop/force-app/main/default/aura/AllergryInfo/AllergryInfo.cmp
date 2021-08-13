@@ -5,8 +5,8 @@
     
     <aura:attribute name="flavor" type = "String"/>
 	<div style="background-color: #F7FFF7 !important;">
-        <h2>Allergy and Nutrition Info</h2>
-        <br/>
+        <h2>NUTRITIONAL FACTS (per 1/2 cup serving)</h2>
+        <br></br>
         
         <div>
             <label>Flavor Name: 
@@ -15,26 +15,12 @@
         </div>
         
         <div>
-            <label>Name:   
-                {!v.flavor.Name}            
-            </label>
-        </div>
-      	
-        
-        <div>
             <label>All Ingredients: 
             {!v.flavor.Pick_Ingredients__c}
             </label>
         </div>
-        <br></br>
-        <br></br>
         
-        
-        <h1>NUTRITIONAL FACTS</h1>
         <br></br>
-        <h1>In a 1/2 cup serving</h1>
-        <br></br>
-       
         
         <div>
             <label>Calories: 
@@ -72,7 +58,9 @@
             	{!v.flavor.Protein_g__c}
             	</label>
         	</div>
-        
+        	
+        	<br></br>
+        	
        		<div>
             	<label>Allergy: 
             		{!v.flavor.Allergy__c}

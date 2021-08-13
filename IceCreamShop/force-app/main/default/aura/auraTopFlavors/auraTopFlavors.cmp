@@ -8,11 +8,9 @@
     
     	<!-- Externally styled header bar and text for the component. -->
 		<div id="podiumContainer">
-    		<h2>Our Flavors</h2>
-        
-        	<br/>
-        	<br/>
-        
+            <h2>Pick Your Flavor</h2>
+            <br/>
+            
         	<!-- Div for "Top-3" podium. -->
     		<div id="podium">
         	   <aura:iteration items="{!v.allFlavorWrappers}" var="wrapper">

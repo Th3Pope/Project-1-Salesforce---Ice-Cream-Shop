@@ -66,9 +66,10 @@
             <h1>Total: $ {! v.total}</h1>
         </div>
         <br/>
-        <div style="width: 60%; padding-top: 1vh;" class="slds-align_absolute-center ">
+        <div style="width: 60%; padding-top: 1vh; text-align: center;" class="slds-align_absolute-center ">
         <!-- Success variant: Identifies a successful action -->
-            <button  label="Checkout" title="Order Now" onclick="{! c.buttonClickHandler}" style="width: 60%; height:80px; color: #FF6B6B; background-color: #FFE66D; border: 1px solid #1A535C;">Check Out</button>
+            <button  label="Checkout" title="Order Now" onclick="{! c.buttonClickHandler}" style="width: 60%; height:80px; color: #FF6B6B; background-color: #FFE66D; border: 1px solid #1A535C; border-radius: 8px;">Check Out</button>
         </div>
     </div>
+    <br/>
 </aura:component>
