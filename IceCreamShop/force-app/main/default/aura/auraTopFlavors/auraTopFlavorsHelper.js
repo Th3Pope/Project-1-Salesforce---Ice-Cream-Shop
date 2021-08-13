@@ -11,8 +11,10 @@
 	},
     
     setFlavorHelper : function(component, event) {
-        let flavorId = event.getSource().get("v.value");
+        let flavor = event.getSource().get("v.value");
         let orderComponent = component.find("orderComponent");
-        orderComponent.setFlavorId(flavorId);
+        let allergyComponent = component.find("allergyComponent");
+        orderComponent.setFlavorId(flavor.Id);
+        allergyComponent.setFlavor(flavor.Name);
     }
 })

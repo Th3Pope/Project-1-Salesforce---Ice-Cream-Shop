@@ -1,16 +1,11 @@
 <aura:component controller= "ControllerAllergy" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:method name="setFlavor" action="{!c.getInfo}" access="public">
+        <aura:attribute name="flavorName" type="String"/> 
+    </aura:method>
+    
     <aura:attribute name="flavor" type = "String"/>
 	<div style="background-color: #F7FFF7 !important;">
         <h2>Allergy and Nutrition Info</h2>
-        	<div onkeyup="{!c.getInfo}">
-        	<lightning:input
-            	aura:id="enter-search"
-            	name="enter-search"
-            	label="Search for a flavor to see its allergy and nutrition info:"
-            	type="search"
-        	/>
-    	</div>
-        
         <br/>
         
         <div>

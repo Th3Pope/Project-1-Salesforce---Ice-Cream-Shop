@@ -24,11 +24,12 @@
                 	   {!wrapper.nameString}
                 	   <br/>
                        ${!wrapper.priceString} per scoop
-                       <lightning:button  label="Select Flavor" title="Select this flavor for your next order" value = "{!wrapper.flavor.Id}" onclick="{!c.setFlavorChoice}"> Select Flavor </lightning:button>
+                       <lightning:button  label="Select Flavor" title="Select this flavor for your next order" value = "{!wrapper.flavor}" onclick="{!c.setFlavorChoice}"> Select Flavor </lightning:button>
                    </div>
          	   </aura:iteration>
     		</div>
     	</div>
-    
+    	
+    	<c:AllergryInfo aura:id="allergyComponent"/>
     	<c:flavorListTableWithCheckbox aura:id="orderComponent"/>
 </aura:component>
