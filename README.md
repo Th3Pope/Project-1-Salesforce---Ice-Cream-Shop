@@ -24,7 +24,7 @@ To-do list:
 
 2. If not already present on your system, install VSCode (or another editor of your choice) that supports an SFDX plugin.  
 
-3. Create a scratch org based of the shape defined by config/project-scratch-def.json. An official video tutorial from Salesforce support can be found [here](https://www.youtube.com/watch?v=29C1TJTWauo).
+3. Create a scratch org based of the shape defined by config/project-scratch-def.json. An official video tutorial from Salesforce support can be found [here](https://www.youtube.com/watch?v=29C1TJTWauo) regarding how to do this.
 
 - All the `code` required to get started
 - Images of what it should look like
